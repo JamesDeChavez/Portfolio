@@ -1,0 +1,55 @@
+.Glowing {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background: black;
+}
+
+.Glowing_nameContainer {
+    display: flex;
+    place-content: center;
+}
+
+.Glowing_letter {
+    font-size: clamp(2rem, 9vw, 4rem);
+    color: yellow;
+    letter-spacing: 1rem;
+    animation: GlowingFont 2s linear infinite;
+}
+
+.Glowing_letter:nth-child(1) {
+    animation-delay: 0s;
+}
+.Glowing_letter:nth-child(2) {
+    animation-delay: .2s;
+}
+.Glowing_letter:nth-child(3) {
+    animation-delay: 1s;
+}
+.Glowing_letter:nth-child(4) {
+    animation-delay: .6s;
+}
+.Glowing_letter:nth-child(5) {
+    animation-delay: 1.4s;
+}
+.Glowing_letter:nth-child(6) {
+    animation-delay: 1.2s;
+}
+.Glowing_letter:nth-child(7) {
+    animation-delay: .7s;
+}
+
+@keyframes GlowingFont {
+    0% {
+        color: rgb(255, 255, 200);
+        text-shadow: none;
+    }
+    90% {
+        color: rgb(255, 255, 200);
+        text-shadow: none;
+    }
+    100% {
+        color: yellow;
+        text-shadow: 0 0 2rem yellow, 0 0 2rem yellow;
+    }
+}

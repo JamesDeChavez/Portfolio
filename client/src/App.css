@@ -1,215 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
-
-.App {
-    padding: 1rem;
-    background: #e3e6e6;
-}
-
-.name_container {
-    display: flex;
-    margin: 1rem;
-    gap: 1rem;
-    align-items: flex-end;
-}
-
-.name_text {
+body, h1 {
     margin: 0;
-    color: #111111;
-    font-size: 6rem;
-    font-family: 'Rajdhani', sans-serif;
-    text-shadow: -1px 1px 2px #ffffff,
-				  1px 1px 2px #ffffff,
-				  1px -1px 0 #ffffff,
-				  -1px -1px 0 #ffffff;
+    overflow-x: hidden;
 }
 
-.shape_container {
-    width: 6rem;
-    height: 10rem;
-    border: solid 2px #ffffff;
-    background-color: blue;
-    animation: ColorLoop_One 8s step-end 1s infinite normal forwards;
-    overflow: hidden;
+@keyframes slideRightToLeft {
+  0% {
+    transform: translate(+300%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
-.D_container {
-    border-radius: 0 2rem 2rem 0;
-    display: grid;
-    place-content: center;
+@keyframes slideRightToLeftEarly {
+  0% {
+    transform: translate(-150%, -5px)
+  }
+  50% {
+    transform: translate(-150%, -5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
-.J_container {
-    border-radius: 0 0 1rem 0;
-}
-
-.D_innershape_visible {
-    width: 2rem;
-    height: 6rem;
-    border-radius: 0 1rem 1rem 0;
-    background-color: red;
-    animation: D_Grow_MidToBig 2s ease 1s infinite,
-    ColorLoop_Two 8s step-end 1s infinite normal forwards;  
-}
-
-.J_innershape_visible {
-    width: 4rem;
-    height: 8rem;
-    border-radius: 0 0 1rem 0;
-    background-color: red;
-    animation: J_Grow_MidToBig 2s ease 1s infinite,
-    ColorLoop_Two 8s step-end 1s infinite normal forwards;    
-}
-
-.D_innershape_hidden {
-    position: absolute;
-    width: 0;
-    height: 0;
-    place-self: center;
-    border-radius: 0 1rem 1rem 0;
-    background-color: green;
-    animation: D_Grow_SmallToMid 2s ease 1s infinite,    
-    ColorLoop_Three 8s step-end 1s infinite normal forwards;
-}
-
-.J_innershape_hidden {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-radius: 0 0 1rem 0;
-    background-color: green;
-    animation: J_Grow_SmallToMid 2s ease 1s infinite,
-    ColorLoop_Three 8s step-end 1s infinite normal forwards;
-}
-
-@keyframes J_Grow_MidToBig {
-    0% {
-        width: 4rem;
-        height: 8rem;
-    }
-    50% {
-        width: 6rem;
-        height: 10rem;
-    }
-    100% {
-        width: 6rem;
-        height: 10rem;
-    }
-}
-
-@keyframes J_Grow_SmallToMid {
-    0% {
-        width: 0;
-        height: 0;
-    }
-    50% {
-        width: 4rem;
-        height: 8rem;
-    }
-    100% {
-        width: 4rem;
-        height: 8rem;
-    }
-}
-
-@keyframes D_Grow_MidToBig {
-    0% {
-        width: 2rem;
-        height: 6rem;
-    }
-    50% {
-        width: 7rem;
-        height: 11rem;
-    }
-    100% {
-        width: 6rem;
-        height: 11rem;
-    }
-}
-
-@keyframes D_Grow_SmallToMid {
-    0% {
-        width: 0;
-        height: 0;
-    }
-    50% {
-        width: 2rem;
-        height: 6rem;
-    }
-    100% {
-        width: 2rem;
-        height: 6rem;
-    }
-}
-
-
-@keyframes ColorLoop_One {
-    0% {
-        background: blue;
-    }
-    25% {
-        background: red;
-    }
-    50% {
-        background: green;
-    }
-    75% {
-        background: yellow;
-    }
-    100% {
-        background: blue;
-    }
-}
-
-@keyframes ColorLoop_Two {
-    0% {
-        background: red;
-    }
-    25% {
-        background: green;
-    }
-    50% {
-        background: yellow;
-    }
-    75% {
-        background: blue;
-    }
-    100% {
-        background: red;
-    }
-}
-
-@keyframes ColorLoop_Three {
-    0% {
-        background: green;
-    }
-    25% {
-        background: yellow;
-    }
-    50% {
-        background: blue;
-    }
-    75% {
-        background: red;
-    }
-    100% {
-        background: green;
-    }
-}
-
-@keyframes TextColorLoop {
-    0% {
-        color: blue;
-    }
-    25% {
-        color: red;
-    }
-    50% {
-        color: green;
-    }
-    75% {
-        color: yellow;
-    }
-    100% {
-        color: blue;
-    }
+@keyframes slideRightToLeftLate {
+  0% {
+    transform: translate(+150%, 5px)
+  }
+  50% {
+    transform: translate(+150%, -5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }

@@ -1,0 +1,11 @@
+.Scramble {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.Scramble_name {
+    font-size: clamp(2rem, 9vw, 4rem);
+    text-align: center;
+}
+

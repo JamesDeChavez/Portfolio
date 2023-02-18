@@ -1,0 +1,24 @@
+.City {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.City_name {
+    font-size: clamp(2rem, 9vw, 10rem);
+    text-align: center;
+    background-image: url(https://images.pexels.com/photos/1682706/pexels-photo-1682706.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    color: white;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    /* animation: backgroundBobbing 3s ease-in-out alternate infinite; */
+}
+
+@keyframes backgroundBobbing {
+    0% {
+      background-position: 50% 60%;  
+    }
+    100% {
+        background-position: 50% 40%;
+    }
+}
