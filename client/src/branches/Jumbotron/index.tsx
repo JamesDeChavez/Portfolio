@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import City from "../../components/City";
 import Folded from "../../components/Folded";
 import Glowing from "../../components/Glowing";
@@ -9,7 +9,7 @@ import Scramble from "../../components/Scramble";
 
 const JumbotronBranch = () => {
     const RENDERS = ['PENDULUM', 'OCEAN', 'SCRAMBLE', 'HOVERING', 'FOLDED','GLOWING', 'CITY'];
-    const [render, setRender] = useState('HOVERING')
+    const [render, setRender] = useState('SCRAMBLE')
 
     const nextStyle = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
