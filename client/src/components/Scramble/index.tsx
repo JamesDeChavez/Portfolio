@@ -38,7 +38,7 @@ const Scramble = () => {
         if (indexOptions.length === 0) {
             setTimeout(() => {
                 nextWord()
-            }, 1000)
+            }, 2000)
             clearInterval(interval)
         }
 
@@ -81,7 +81,7 @@ const Scramble = () => {
     useEffect(() => {
         setTimeout(() => {
             setCurrentWord(wordsToScramble[0].split('')) 
-        }, 1000) 
+        }, 10) 
     }, [])
     
     useEffect(() => {
@@ -108,13 +108,14 @@ const Scramble = () => {
     const className = 'Scramble';
     return (
         <div className={className}>
-            <h1 className={`${className}_name`}>James</h1>
-            <h1 className={`${className}_name`}>DeChavez</h1>
+            <h1 className={`${className}_name`}>james</h1>
+            <h1 className={`${className}_name`}>dechavez</h1>
             <div className={`${className}_textContainer`}>
                 {wordToRender.map((char, i) => {
-                    return <span key={i}>{char}</span>
+                    return <span className={`${className}_text`} key={i}>{char}</span>
                 })}
             </div>
+            <button className={`${className}_button`}>contact me</button>
         </div>
     );
 };
