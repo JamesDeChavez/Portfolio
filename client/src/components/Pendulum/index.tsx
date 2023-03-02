@@ -1,8 +1,8 @@
 import './styles.css';
 
 const Pendulum = () => {
-    const firstName = 'JAMES';
-    const lastName = 'DECHAVEZ';
+    const firstName = 'James';
+    const lastName = 'DeChavez';
     const className = 'Pendulum';
     return (
         <div className={className}>

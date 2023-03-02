@@ -1,0 +1,44 @@
+.Navbar {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 2;
+}
+
+.Navbar_topRow {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: .5rem;
+}
+
+.Navbar_header {
+    color: #E2F1FF;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+.Navbar_hamburger {
+    border: solid 1px #E2F1FF;
+    background-color: #141e3075;
+    fill: #E2F1FF;
+    width: 3rem;
+    height: auto;
+}
+
+.Navbar_buttonsContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    height: calc(100vh - 4rem);
+}
+
+.Navbar_button {
+    color: #E2F1FF;
+    background-color: #243B55;
+    border: solid 1px #E2F1FF;
+    font-size: clamp(1rem, 8vw, 3rem);
+}

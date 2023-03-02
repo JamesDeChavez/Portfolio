@@ -3,11 +3,11 @@ import { randomSelectFromArray } from '../../utils/functions';
 import './styles.css'
 
 const Scramble = () => {
-    const wordsToScramble = ['Fullstack Developer', 'Problem Solver', 'Automation Addict', 'Data Driven']
-    const charsForScramble = '!<>+_?@#$%&()'
+    const wordsToScramble = ['Fullstack_Developer', 'Problem_Solver', 'Automation_Addict', 'Data_Driven']
+    const charsForScramble = 'ZXQWYFRL!<>+_?@#$%&()'
 
     const [currentWord, setCurrentWord] = useState<string[]>([])    
-    const [wordToRender, setWordToRender] = useState<string[]>(Array(wordsToScramble[0].length).fill('_'))
+    const [wordToRender, setWordToRender] = useState<string[]>(['_'])
     const [indexesLeftToUpdate, setIndexesLeftToUpdate] = useState<number[]>([])
     
     const populateIndexesArray = () => {
@@ -38,7 +38,7 @@ const Scramble = () => {
         if (indexOptions.length === 0) {
             setTimeout(() => {
                 nextWord()
-            }, 2000)
+            }, 5000)
             clearInterval(interval)
         }
 
@@ -69,8 +69,7 @@ const Scramble = () => {
         if (updatedWord.length < currentWord.length) {
             let randomChar: string = randomSelectFromArray(charsForScramble.split(''));
             updatedWord.push(randomChar)
-            indexOptions.push(updatedWord.length - 1)
-            
+            indexOptions.push(updatedWord.length - 1)            
         }
         
         //Update State
@@ -79,9 +78,7 @@ const Scramble = () => {
     }
 
     useEffect(() => {
-        setTimeout(() => {
-            setCurrentWord(wordsToScramble[0].split('')) 
-        }, 10) 
+        setCurrentWord(wordsToScramble[0].split(''))
     }, [])
     
     useEffect(() => {
@@ -108,14 +105,9 @@ const Scramble = () => {
     const className = 'Scramble';
     return (
         <div className={className}>
-            <h1 className={`${className}_name`}>james</h1>
-            <h1 className={`${className}_name`}>dechavez</h1>
-            <div className={`${className}_textContainer`}>
-                {wordToRender.map((char, i) => {
-                    return <span className={`${className}_text`} key={i}>{char}</span>
-                })}
-            </div>
-            <button className={`${className}_button`}>contact me</button>
+            {wordToRender.map((char, i) => {
+                return <span className={`${className}_text`} key={i}>{char}</span>
+            })}
         </div>
     );
 };

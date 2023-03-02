@@ -1,37 +1,17 @@
-body, h1 {
+body, button {
+  font-family: 'Major Mono Display', monospace;
+}
+
+body, h1, h2, h3, p, button {
     margin: 0;
-    overflow-x: hidden;
+    padding: 0;
 }
 
-@keyframes slideRightToLeft {
-  0% {
-    transform: translate(+300%, 0);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
+button {
+  background-color: transparent;
+  border: none;
 }
 
-@keyframes slideRightToLeftEarly {
-  0% {
-    transform: translate(-150%, -5px)
-  }
-  50% {
-    transform: translate(-150%, -5px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes slideRightToLeftLate {
-  0% {
-    transform: translate(+150%, 5px)
-  }
-  50% {
-    transform: translate(+150%, -5px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
+button:hover {
+  cursor: pointer;
 }

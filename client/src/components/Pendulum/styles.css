@@ -1,5 +1,4 @@
 .Pendulum {
-    height: 100vh;
     display: grid;
     place-content: center;
 }
@@ -10,8 +9,9 @@
 }
 
 .Pendulum_letter {
-    font-size: clamp(2rem, 9vw, 4rem);
-    transform-origin: 50% -100%;    
+    font-size: clamp(2.5rem, 9vw, 6rem);
+    transform-origin: 50% -100%;
+    color: #E2F1FF;    
 }
 
 .Pendulum_letter:first-child {

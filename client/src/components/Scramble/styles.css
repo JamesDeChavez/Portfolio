@@ -1,59 +1,14 @@
 .Scramble {
-    height: 100vh;
-    width: 100%;
-    display: grid;
-    place-content: center;
-    background-image: url('../../assets/polygon-scatter-haikei.svg');
-    aspect-ratio: 960/540;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    
-}
-
-.Scramble_name {
-    font-size: clamp(2rem, 9vw, 6rem);
-    text-align: center;
-    color: #E2F1FF;
-    font-family: 'Major Mono Display', monospace;;
-}
-
-.Scramble_textContainer {
     display: flex;
     justify-content: center;
-    margin: 1rem 0;
 }
 
 .Scramble_text {
-    font-size: clamp(1rem, 5vw, 2.5rem);
+    font-size: clamp(1.2rem, 5vw, 2.5rem);
     color: #E2F1FF;
-    font-family: 'Major Mono Display', monospace;
 }
 
-.Scramble_button {
-    padding: 1em;
-    font-family: 'Major Mono Display', monospace;
-    font-weight: bold;
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    color: #E2F1FF;
-    border: 1px solid #E2F1FF;
-    background: linear-gradient(to left, #141E30 50%, #243B55 50%) right;
-    background-size: 200%;
-    transition: .5s ease-out;
-    width: clamp(120px, 50vw, 400px);
-    justify-self: center;
-}
 
-.Scramble_button:hover {
-    cursor: pointer;
-    background-position: left;
-}
-
-@media screen and (max-width: 600px) {
-    .Scramble {
-        background-image: url('../../assets/polygon-scatter-haikei-mobile.svg');
-    }
-}
 
 
 

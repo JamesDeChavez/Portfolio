@@ -1,0 +1,49 @@
+.AboutSection {
+    display: grid;
+    padding-top: clamp(6rem, 5vh, 12rem);
+    padding-bottom: clamp(6rem, 5vh, 12rem);  
+    padding-left: clamp(2rem, 5vw, 6rem);
+    padding-right: clamp(2rem, 5vw, 6rem);
+    row-gap: clamp(2rem, 3vh, 6rem);
+    color: #141E30;
+}
+
+.AboutSection_header {
+    text-align: center;
+    font-size: clamp(2rem, 9vw, 3rem);
+}
+
+.AboutSection_textSection,
+.AboutSection_skillsSection {
+    display: grid;
+    gap: .5rem;
+}
+
+.AboutSection_text {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-family: 'Poppins', sans-serif;
+}
+
+.AboutSection_header > span,
+.AboutSection_text > span {
+    color: #00C6BD;
+}
+
+.AboutSection_bold {
+    font-weight: bold;
+}
+
+.AboutSection_skillsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.AboutSection_skill {
+    color: #E2F1FF;
+    padding: .2rem .4rem;
+    background-color: #243B55;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-family: 'Poppins', sans-serif;
+    border-radius: .5rem;
+}
