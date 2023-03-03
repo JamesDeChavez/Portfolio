@@ -1,5 +1,6 @@
 .HomeSection {
     height: 100vh;
+    height: 100svh;
     width: 100%;
     display: grid;
     grid-template-rows: 1fr auto;
@@ -18,7 +19,7 @@
 }
 
 .HomeSection_button {
-    padding: .5em;
+    padding: .5em 0;
     font-weight: bold;
     font-size: clamp(1rem, 3vw, 1.5rem);
     color: #00C6BD;
@@ -37,18 +38,32 @@
 
 .HomeSection_scrollContainer {
     padding-bottom: 2rem;
-    color: #E2F1FF;
     display: flex;
-    flex-direction: column;
-    gap: .5rem;
+    place-content: center;
+}
+
+.HomeSection_scrollButton {
+    display: grid;
+    row-gap: 0.5rem;
+}
+
+.HomeSection_scrollButton:hover svg,
+.HomeSection_scrollButton:hover span {
+    cursor: pointer;
+    color: #00C6BD;
+    fill: #00C6BD;
+}
+
+.HomeSection_scrollText {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    color: #E2F1FF;
 }
 
 .HomeSection_scrollTriangle {
-    width: 2rem;
+    width: 1rem;
     height: auto;
     place-self: center;
-    fill: none;
-    stroke: #E2F1FF;
+    fill: #E2F1FF;
     stroke-width: 3;
 }
 

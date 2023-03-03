@@ -13,32 +13,3 @@
     transform-origin: 50% -100%;
     color: #E2F1FF;    
 }
-
-.Pendulum_letter:first-child {
-    animation: firstPendulum 1s alternate ease-in infinite;
-}
-
-.Pendulum_letter:last-child {
-    animation: lastPendulum 1s alternate ease-out infinite;
-}
-
-@keyframes firstPendulum {
-    0% {
-        transform: rotate(35deg);
-    }
-    50% {
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes lastPendulum {
-    0% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(-35deg);
-    }
-}

@@ -22,8 +22,8 @@ const AboutSection = () => {
                     My Skills
                 </p>
                 <div className={`${className}_skillsContainer`}>
-                    {skills.map(skill => {
-                        return <p className={`${className}_skill`}>{skill}</p>
+                    {skills.map((skill, i) => {
+                        return <p className={`${className}_skill`} key={i}>{skill}</p>
                     })}
                 </div>
             </div>

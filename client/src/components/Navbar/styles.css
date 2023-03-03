@@ -10,15 +10,22 @@
 }
 
 .Navbar_topRow {
-    display: flex;
-    gap: 1rem;
+    display: none;
     align-items: center;
-    padding: .5rem;
+    height: 4rem;
+    padding-left: 5rem;
+    background-color: #141e30;
 }
 
 .Navbar_header {
     color: #E2F1FF;
     font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+.Navbar_hamburgerContainer {
+    position: absolute;
+    margin: .5rem;
+    z-index: 3;
 }
 
 .Navbar_hamburger {
@@ -34,6 +41,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
     height: calc(100vh - 4rem);
+    display: none;
 }
 
 .Navbar_button {
@@ -41,4 +49,14 @@
     background-color: #243B55;
     border: solid 1px #E2F1FF;
     font-size: clamp(1rem, 8vw, 3rem);
+}
+
+
+.Navbar_button:hover { 
+    color: #00C6BD;
+}
+
+
+.Navbar_button > span {
+    color: #00C6BD;
 }
