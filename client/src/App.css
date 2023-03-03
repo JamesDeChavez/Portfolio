@@ -1,4 +1,4 @@
-body, button {
+body, button, input[type=submit] {
   font-family: 'Major Mono Display', monospace;
 }
 

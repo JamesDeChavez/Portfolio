@@ -3,7 +3,7 @@ import './styles.css'
 const ContactSection = () => {
     const className = 'ContactSection'
     return (
-        <div className={className}>
+        <div className={className} >
             <h3 className={`${className}_header`}>
                 <span>{'<'}</span>Contact<span>{'/>'}</span>
             </h3>

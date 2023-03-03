@@ -1,11 +1,12 @@
 import './styles.css'
 
+
 const AboutSection = () => {
     const skills = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'jQuery', 'BootStrap', 'GSAP', 'React', 'Redux', 'Jest','Apollo GraphQL', 'Node', 'Express', 'SQL', 'MongoDB', 'Git', 'Python']
 
     const className = 'AboutSection'
     return (
-        <div className={className}>
+        <div className={className} id={className} >
             <h3 className={`${className}_header`}>
                 <span>{'<'}</span>About<span>{'/>'}</span>
             </h3>

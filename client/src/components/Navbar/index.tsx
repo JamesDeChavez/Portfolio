@@ -1,6 +1,9 @@
 import { useState, useRef, useLayoutEffect } from 'react'
-import gsap from 'gsap'
+import gsap, { Power1 } from 'gsap'
+import ScrollToPlugin from 'gsap/ScrollToPlugin'
 import './styles.css'
+
+gsap.registerPlugin(ScrollToPlugin)
 
 const Navbar = () => {    
     const [navVisible, setNavVisible] = useState(false)
@@ -93,13 +96,30 @@ const Navbar = () => {
 
     const handleNavClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, n: number) => {
         e.preventDefault()
-        if (navTimeline.current) {
+        if (navTimeline.current && clickTimeline.current) {
+            clickTimeline.current.reverse()
             navTimeline.current.reverse().then(() => {
                 gsap.set('.Navbar_buttonsContainer', { display: 'none'})
                 gsap.set('.Navbar_topRow', { display: 'none' })
             })
         }
         setNavVisible(prevState => !prevState)
+
+        switch(n) {
+            case 0:
+                gsap.to(window, { scrollTo: ".HomeSection", duration: 1, ease: Power1.easeOut })
+                break;
+            case 1:
+                gsap.to(window, { scrollTo: ".AboutSection", duration: 1, ease: Power1.easeOut })
+                break;
+            case 2:
+                gsap.to(window, { scrollTo: ".ProjectsSection", duration: 1, ease: Power1.easeOut })
+                break;
+            case 3:
+                gsap.to(window, { scrollTo: ".ContactSection", duration: 1, ease: Power1.easeOut })
+                break;
+            default: break;
+        }       
     }
         
     const className = 'Navbar'

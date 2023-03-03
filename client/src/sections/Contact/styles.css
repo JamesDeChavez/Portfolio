@@ -1,10 +1,10 @@
 .ContactSection {
     display: grid;
-    padding-top: clamp(6rem, 5vh, 12rem);
-    padding-bottom: clamp(6rem, 5vh, 12rem);  
-    padding-left: clamp(2rem, 5vw, 6rem);
-    padding-right: clamp(2rem, 5vw, 6rem);
-    row-gap: clamp(2rem, 3vh, 6rem);
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    gap: 2rem;
     color: #141E30;
 }
 
@@ -29,6 +29,7 @@
     display: grid;
     gap: 2rem;
     padding: 2rem;
+    border-radius: 5px;
 }
 
 .ContactSection_inputContainer {
@@ -46,6 +47,7 @@
 .ContactSection_textarea {
     font-size: clamp(1rem, 4vw, 1.5rem);
     padding: .5rem;
+    border-radius: 5px;
 }
 
 .ContactSection_textInput,
@@ -62,9 +64,24 @@
 .ContactSection_submit {
     padding: .5em;
     font-weight: bold;
+    font-size: clamp(1rem, 3vw, 1.5rem);
     color: #00C6BD;
     border: 1px solid #00C6BD;
     background: linear-gradient(to left, #141E30 50%, #243B55 50%) right;
     background-size: 200%;
     transition: .5s ease-out;
+    border-radius: 5px;
+}
+
+.ContactSection_submit:hover {
+    cursor: pointer;
+    background-position: left;
+}
+
+@media screen and (min-width: 1400px) {
+    .ContactSection {
+        padding-left: 20rem;
+        padding-right: 20rem;
+        row-gap: 4rem;
+    }
 }

@@ -1,4 +1,4 @@
-import gsap, { Circ } from 'gsap';
+import gsap, { Circ, Power1 } from 'gsap';
 import { useLayoutEffect, useRef } from 'react';
 import Pendulum from '../../components/Pendulum';
 import Scramble from '../../components/Scramble';
@@ -6,13 +6,18 @@ import './styles.css'
 
 const HomeSection = () => {
     const className = 'HomeSection'
-    const root = useRef(null)
     const triangle = useRef(null)
+    const root = useRef(null)
     const timeline = useRef<gsap.core.Timeline>()
+
+    const handleContactClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault()
+        gsap.to(window, { scrollTo: ".ContactSection", duration: 1, ease: Power1.easeOut })
+    }
 
     const handleScrollClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
-        console.log('scroll clicked')
+        gsap.to(window, { scrollTo: ".AboutSection", duration: 1, ease: Power1.easeOut })
     }
 
     useLayoutEffect(() => {
@@ -38,7 +43,7 @@ const HomeSection = () => {
             <div className={`${className}_main`}>
                 <Pendulum/>
                 <Scramble/>
-                <button className={`${className}_button`}>Contact Me</button>
+                <button className={`${className}_button`} onClick={handleContactClick}>Contact Me</button>
             </div>
             <div className={`${className}_scrollContainer`}>
                 <button className={`${className}_scrollButton`} onClick={handleScrollClick}>

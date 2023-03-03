@@ -34,6 +34,7 @@
     fill: #E2F1FF;
     width: 3rem;
     height: auto;
+    border-radius: 5px;
 }
 
 .Navbar_buttonsContainer {
