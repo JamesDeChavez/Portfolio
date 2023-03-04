@@ -10,7 +10,7 @@ const Pendulum = () => {
     
     useLayoutEffect(() => {
         const gsapContext = gsap.context(() => {
-            timeline.current = gsap.timeline({ repeat: -1 })
+            timeline.current = gsap.timeline({ repeat: -1, delay: 1 })
                 .to(`.${className}_first`, { duration: 0.5, rotate: 35, ease: Power1.easeOut })
                 .to(`.${className}_first`, { duration: 0.5, rotate: 0, ease: Power1.easeIn })
                 .to(`.${className}_last`, { duration: 0.5, rotate: -35, ease: Power1.easeOut })

@@ -41,6 +41,10 @@ const Navbar = () => {
     
     useLayoutEffect(() => {        
         let gsapContext = gsap.context(() => {
+            //Entrance animation on render
+            gsap.from('.Navbar_hamburger', { duration: 1, y: -150 })
+            gsap.set('.Navbar_hamburger', { clearProps: true })
+
             //Burger click animation
             clickTimeline.current = gsap.timeline({ paused: true })
                 .set('.Navbar_line', { scaleX: 1 })

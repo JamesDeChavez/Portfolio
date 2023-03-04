@@ -75,7 +75,7 @@
     background-position: left;
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1200px) {
     .AboutSection {
         grid-template-columns: 1fr 1fr;
         padding-left: 10rem;

@@ -1,45 +1,71 @@
-import gsap, { Circ, Power1 } from 'gsap';
-import { useLayoutEffect, useRef } from 'react';
-import Pendulum from '../../components/Pendulum';
-import Scramble from '../../components/Scramble';
+import gsap, { Back, Circ, Power1 } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import { useLayoutEffect, useRef } from 'react'
+import Pendulum from '../../components/Pendulum'
+import Scramble from '../../components/Scramble'
+import { ReactComponent as SvgBackground1 } from '../../assets/polygon-scatter-haikei-mobile.svg'
+import { ReactComponent as SvgBackground2 } from '../../assets/polygon-scatter-haikei.svg'
 import './styles.css'
 
+gsap.registerPlugin(ScrollTrigger)
+
 const HomeSection = () => {
-    const className = 'HomeSection'
     const triangle = useRef(null)
     const root = useRef(null)
-    const timeline = useRef<gsap.core.Timeline>()
-
+    
     const handleContactClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
         gsap.to(window, { scrollTo: ".ContactSection", duration: 1, ease: Power1.easeOut })
     }
-
+    
     const handleScrollClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
         gsap.to(window, { scrollTo: ".AboutSection", duration: 1, ease: Power1.easeOut })
     }
-
+    
     useLayoutEffect(() => {
         const gsapContext = gsap.context (() => {
-            timeline.current = gsap.timeline({repeat: -1})
-                .to(triangle.current, {
-                    duration: 0.5,
-                    y: 20,
-                    ease: Circ.easeIn,
-                }, 'bounce1')
-                .to(triangle.current, {
-                    duration: 0.5,
-                    y: 0,
-                    ease: Circ.easeOut,
-                }, 'bounce2')
-        }, root)
 
+            //Animations on Render
+            gsap.to(triangle.current, {
+                duration: 0.5,
+                y: 20,
+                ease: Circ.easeIn,
+                repeat: -1,
+                yoyo: true
+            })
+            gsap.from('.Pendulum', { x: '-300vw', duration: 1, ease: Back.easeOut })
+            gsap.set('.Pendulum', { clearProps: true })
+
+            //Scroll Animations
+            gsap.to(['.path1', '.path2', '.path3'], {
+                x: -100,
+                y: -200,
+                scale: .1,
+                scrollTrigger: {
+                    trigger: '.AboutSection',
+                    toggleActions: 'restart none none none',
+                    scrub: true
+                }
+            })
+            gsap.to('.HomeSection_main', {
+                x: 1000,
+                scrollTrigger: {
+                    trigger: '.AboutSection',
+                    toggleActions: 'restart none none none',
+                    scrub: true
+                }
+            })
+        }, root)
+        
         return () => gsapContext.revert()        
     }, [])
-
+    
+    const className = 'HomeSection'
     return (
         <div className={className} ref={root} >
+            <SvgBackground1 className={`${className}_background`} />
+            <SvgBackground2 className={`${className}_backgroundWide`} />
             <div className={`${className}_main`}>
                 <Pendulum/>
                 <Scramble/>

@@ -1,14 +1,12 @@
-<svg id="visual" viewBox="0 0 960 540" width="960" height="540" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
-    <rect width="960" height="540" fill="#141E30"></rect>
-    <g>
-        <g transform="translate(888 50)">
-            <path d="M0 -144L124.7 -72L124.7 72L0 144L-124.7 72L-124.7 -72Z" fill="none" stroke="#243B55" stroke-width="2"></path>
-        </g>
-        <g transform="translate(882 448)">
-            <path d="M0 -110L95.3 -55L95.3 55L0 110L-95.3 55L-95.3 -55Z" fill="none" stroke="#243B55" stroke-width="2"></path>
-        </g>
-        <g transform="translate(14 108)">
-            <path d="M0 -136L117.8 -68L117.8 68L0 136L-117.8 68L-117.8 -68Z" fill="none" stroke="#243B55" stroke-width="2"></path>
-        </g>
+<svg id="visual" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <rect fill="#141E30"></rect>
+    <g transform="translate(888 50)">
+        <path d="M0 -144L124.7 -72L124.7 72L0 144L-124.7 72L-124.7 -72Z" fill="none" stroke="#243B55" stroke-width="2" class='path1'></path>
+    </g>
+    <g transform="translate(882 448)">
+        <path d="M0 -110L95.3 -55L95.3 55L0 110L-95.3 55L-95.3 -55Z" fill="none" stroke="#243B55" stroke-width="2" class='path2'></path>
+    </g>
+    <g transform="translate(14 108)">
+        <path d="M0 -136L117.8 -68L117.8 68L0 136L-117.8 68L-117.8 -68Z" fill="none" stroke="#243B55" stroke-width="2" class='path3'></path>
     </g>
 </svg>

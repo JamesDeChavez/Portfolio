@@ -1,3 +1,4 @@
+import { ReactComponent as SvgBackground } from '../../assets/polygon-scatter-haikei-mobile.svg'
 import './styles.css'
 
 const ProjectsSection = () => {
@@ -5,6 +6,7 @@ const ProjectsSection = () => {
     const image = require('../../assets/placeholder.png')
     return (
         <div className={className} >
+            <SvgBackground className={`${className}_background`}/>
             <h3 className={`${className}_header`}>
                 <span>{'<'}</span>Projects<span>{'/>'}</span>
             </h3>

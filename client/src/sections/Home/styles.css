@@ -6,12 +6,31 @@
     grid-template-rows: 1fr auto;
     align-items: center;
     text-align: center;
-    background-image: url('../../assets/polygon-scatter-haikei-mobile.svg');
-    aspect-ratio: 960/540;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    overflow: hidden;
+    position: relative;
 }
+
+.HomeSection_background,
+.HomeSection_backgroundWide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.HomeSection_background > rect,
+.HomeSection_backgroundWide > rect {
+    width: 100%;
+    height: 100%;
+}
+
+
+.HomeSection_backgroundWide { 
+    display: none;
+}
+
 
 .HomeSection_main {
     display: grid;
@@ -69,10 +88,12 @@
 }
 
 @media screen and (min-width: 1400px) {
-    .HomeSection {
-        background-image: url('../../assets/polygon-scatter-haikei.svg');
+    .HomeSection_background {
+        display: none
+    }
+    .HomeSection_backgroundWide {
+        display: block;
     }
 }
-
 
 

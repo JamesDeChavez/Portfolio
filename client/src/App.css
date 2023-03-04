@@ -9,7 +9,8 @@ body, h1, h2, h3, p, button {
 
 body {
   background-color: #243B55;
-  color: #E2F1FF
+  color: #E2F1FF;
+  z-index: -2;
 }
 
 button {
