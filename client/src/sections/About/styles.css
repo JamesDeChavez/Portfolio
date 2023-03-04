@@ -5,6 +5,7 @@
     padding-left: 2rem;
     padding-right: 2rem;
     gap: 1.5rem;
+    overflow: hidden;
 }
 
 .AboutSection_header {

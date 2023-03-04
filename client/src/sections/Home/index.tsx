@@ -36,24 +36,33 @@ const HomeSection = () => {
             })
             gsap.from('.Pendulum', { x: '-300vw', duration: 1, ease: Back.easeOut })
             gsap.set('.Pendulum', { clearProps: true })
+            gsap.to(['.path1', '.path2', '.path3'], {
+                rotate: 360,
+                duration: 100,
+                repeat: -1,
+                transformOrigin: 'center'
+            })
 
-            //Scroll Animations
+            //Scroll Animations - EXIT WINDOW
             gsap.to(['.path1', '.path2', '.path3'], {
                 x: -100,
                 y: -200,
-                scale: .1,
                 scrollTrigger: {
-                    trigger: '.AboutSection',
+                    trigger: '.HomeSection',
+                    start: 'top top',
+                    end: 'bottom top',
                     toggleActions: 'restart none none none',
-                    scrub: true
+                    scrub: 3
                 }
             })
             gsap.to('.HomeSection_main', {
-                x: 1000,
+                x: '50vw',
                 scrollTrigger: {
-                    trigger: '.AboutSection',
+                    trigger: '.HomeSection',
+                    start: 'top top',
+                    end: 'bottom top',
                     toggleActions: 'restart none none none',
-                    scrub: true
+                    scrub: 3
                 }
             })
         }, root)

@@ -8,9 +8,49 @@ const AboutSection = () => {
 
     useLayoutEffect(() => {
         const gsapContext = gsap.context(() => {
-            
-            
 
+            //Animations on Scroll - ENTER WINDOW
+            gsap.from('.AboutSection_header', {
+                x: '-10vw',
+                scrollTrigger: {
+                    trigger: '.AboutSection_header',
+                    start: 'top bottom',
+                    end: 'bottom 80%',
+                    toggleActions: 'restart none none none',
+                    scrub: 3
+                }
+            })            
+            gsap.from('.AboutSection_textSection', {
+                x: '-10vw',
+                scrollTrigger: {
+                    trigger: '.AboutSection_textSection',
+                    start: 'top bottom',
+                    end: 'bottom 80%',
+                    toggleActions: 'restart none none none',
+                    scrub: 3
+                }
+            })            
+            gsap.from('.AboutSection_skillsSection', {
+                x: '20vw',
+                scrollTrigger: {
+                    trigger: '.AboutSection_skillsSection',
+                    start: 'top bottom',
+                    end: 'bottom 80%',
+                    toggleActions: 'restart none none none',
+                    scrub: 3
+                }
+            })
+            gsap.from('.AboutSection_callToAction', {
+                x: '-10vw',
+                transformOrigin: 'left',
+                scrollTrigger: {
+                    trigger: '.AboutSection_callToAction',
+                    start: 'top bottom+=100',
+                    end: 'bottom 95%',
+                    toggleActions: 'restart none none none',
+                    scrub: 3
+                }
+            })
 
             return () => gsapContext.revert()
         })
@@ -23,7 +63,7 @@ const AboutSection = () => {
 
     const className = 'AboutSection'
     return (
-        <div className={className} id={className} >
+        <div className={className} >
             <h3 className={`${className}_header`}>
                 <span>{'<'}</span>About<span>{'/>'}</span>
             </h3>

@@ -13,7 +13,40 @@ const ContactSection = () => {
     const smileTimelineRef = useRef<gsap.core.Timeline>()
 
     useLayoutEffect(() => {
-        const gsapContext = gsap.context(() => {
+        const gsapContext = gsap.context(() => {            
+            //Animation on Scroll - ENTER WINDOW
+            gsap.from('.ContactSection_header', {
+                x: '-10vw',
+                scrollTrigger: {
+                    trigger: '.ContactSection_header',
+                    start: 'top bottom',
+                    end: 'bottom 90%',
+                    toggleActions: 'restart none none none',
+                    scrub: 3
+                }
+            })
+            gsap.from('.ContactSection_text', {
+                x: '10vw',
+                scrollTrigger: {
+                    trigger: '.ContactSection_text',
+                    start: 'top bottom',
+                    end: 'bottom 90%',
+                    toggleActions: 'restart none none none',
+                    scrub: 3
+                }
+            })
+            gsap.from('.ContactSection_form', {
+                x: '-20vw',
+                scrollTrigger: {
+                    trigger: '.ContactSection_form',
+                    start: 'top bottom',
+                    end: 'bottom 90%',
+                    toggleActions: 'restart none none none',
+                    scrub: 3
+                }
+            })
+
+            //Animations for after Message Send
             formTimelineRef.current = gsap.timeline({ paused: true })
                 .to(formElementRef.current, { duration: 1, scale: 0.1 })
                 .to(formElementRef.current, { duration: 0.5, x: '200%' })
