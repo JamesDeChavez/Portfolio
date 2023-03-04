@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { randomSelectFromArray } from '../../utils/functions';
 import './styles.css'
 
@@ -10,13 +10,13 @@ const Scramble = () => {
     const [wordToRender, setWordToRender] = useState<string[]>(['_'])
     const [indexesLeftToUpdate, setIndexesLeftToUpdate] = useState<number[]>([])
     
-    const populateIndexesArray = () => {
+    const populateIndexesArray = useCallback(() => {
         let updatedIndexesArray: number[] = []
         currentWord.forEach((_, i) => {
             updatedIndexesArray.push(i)
         })
         setIndexesLeftToUpdate(updatedIndexesArray)
-    }
+    }, [currentWord])
 
     const nextWord = () => {
         let currentIndex = wordsToScramble.indexOf(currentWord.toString().replaceAll(',', ''))
@@ -27,7 +27,7 @@ const Scramble = () => {
     const savedCallback: any = useRef()
     const savedScramble: any = useRef()
     const savedIndexes: any = useRef()
-    let intervalId: NodeJS.Timer
+    const intervalId: any = useRef()
 
     const updateScrambleCallback = (interval: NodeJS.Timer) => {
         //Pull Reference Variables        
@@ -78,7 +78,7 @@ const Scramble = () => {
     }
 
     useEffect(() => {
-        setCurrentWord(wordsToScramble[0].split(''))
+        setCurrentWord('Fullstack_Developer'.split(''))
     }, [])
     
     useEffect(() => {
@@ -96,11 +96,11 @@ const Scramble = () => {
     useEffect(() => {
         populateIndexesArray()
         function scramble() {
-            savedCallback.current(intervalId)
+            savedCallback.current(intervalId.current)
         }
-        intervalId = setInterval(scramble, 100)
-        return () => clearInterval(intervalId)
-    }, [currentWord])
+        intervalId.current = setInterval(scramble, 100)
+        return () => clearInterval(intervalId.current)
+    }, [currentWord, populateIndexesArray])
 
     const className = 'Scramble';
     return (

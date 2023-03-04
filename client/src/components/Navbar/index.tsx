@@ -81,7 +81,7 @@ const Navbar = () => {
         if (!navVisible && clickTimeline.current && navTimeline.current) {
             clickTimeline.current.play()
             gsap.set('.Navbar_buttonsContainer', { display: 'grid'})
-            gsap.set('.Navbar_topRow', { display: 'grid' })
+            gsap.set('.Navbar_topRow', { display: 'flex' })
             navTimeline.current.play()
         } 
         else if (clickTimeline.current && navTimeline.current) {
@@ -150,7 +150,7 @@ const Navbar = () => {
                 </svg>
             </button>
             <div className={`${className}_topRow`} ref={topRow}>
-                <h2 className={`${className}_header`}>{`James DeChavez`}</h2>                
+                <button className={`${className}_header`} onClick={(e) => handleNavClick(e, 0)} ref={navOne}>{`James DeChavez`}</button>                
             </div>
             <div className={`${className}_buttonsContainer`}>
                 <button className={`${className}_button`} onClick={(e) => handleNavClick(e, 0)} ref={navOne}>

@@ -4,8 +4,7 @@
     padding-bottom: 6rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    gap: 2rem;
-    color: #141E30;
+    gap: 1.5rem;
 }
 
 .AboutSection_header {
@@ -13,7 +12,12 @@
     font-size: clamp(2rem, 9vw, 3rem);
 }
 
-.AboutSection_textSection,
+.AboutSection_textSection {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
 .AboutSection_skillsSection {
     display: grid;
     gap: .5rem;
@@ -42,10 +46,33 @@
 .AboutSection_skill {
     color: #E2F1FF;
     padding: .2rem .4rem;
-    background-color: #243B55;
+    background-color: #141e30;
     font-size: clamp(1rem, 4vw, 1.5rem);
     font-family: 'Poppins', sans-serif;
     border-radius: .5rem;
+}
+
+.AboutSection_callToAction {
+    display: grid;
+    justify-items: left;
+    gap: .5rem;
+}
+
+.AboutSection_button {
+    padding: .5em;
+    font-weight: bold;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: #00C6BD;
+    background: linear-gradient(to left, #243B55 50%, #141e30 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+    border: solid 1px #00C6BD;
+    border-radius: 5px;
+}
+
+.AboutSection_button:hover {
+    cursor: pointer;
+    background-position: left;
 }
 
 @media screen and (min-width: 1400px) {
@@ -55,7 +82,8 @@
         padding-right: 10rem;
         gap: 4rem;
     }
-    .AboutSection_header {
+    .AboutSection_header,
+    .AboutSection_callToAction {
         grid-column: 1 / 3;
     }
 }

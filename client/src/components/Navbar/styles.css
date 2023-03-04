@@ -20,6 +20,7 @@
 .Navbar_header {
     color: #E2F1FF;
     font-size: clamp(1rem, 4vw, 1.5rem);
+    display: inline;
 }
 
 .Navbar_hamburgerContainer {

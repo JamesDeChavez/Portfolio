@@ -4,8 +4,9 @@
     padding-bottom: 6rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    gap: 2rem;
-    color: #141E30;
+    gap: 1.5rem;
+    overflow: hidden;
+    position: relative;
 }
 
 .ContactSection_header {
@@ -78,10 +79,29 @@
     background-position: left;
 }
 
+.ContactSection_thanks {
+    display: none;
+    flex-direction: column;
+    row-gap: 1rem;
+    position: absolute;
+    place-self: end center;
+    height: 50%;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+.ContactSection_smile {
+    font-size: 4rem;
+    color: #00C6BD;
+}
+
+.ContactSection_smile:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
 @media screen and (min-width: 1400px) {
     .ContactSection {
-        padding-left: 20rem;
-        padding-right: 20rem;
-        row-gap: 4rem;
+        padding-left: 25vw;
+        padding-right: 25vw;
     }
 }

@@ -12,6 +12,15 @@
     padding-bottom: 1rem;
 }
 
+.FooterSection_name {
+    color: #E2F1FF;
+    display: flex;
+}
+
+.FooterSection_name:hover {
+    color: #00C6BD;
+}
+
 .FooterSection_text {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
