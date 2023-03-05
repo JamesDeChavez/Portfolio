@@ -3,6 +3,7 @@ import gsap, { Bounce, Circ, Elastic } from 'gsap'
 import './styles.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSmileBeam } from '@fortawesome/free-regular-svg-icons'
+import ContactForm from '../../components/ContactForm'
 
 const ContactSection = () => {
     
@@ -35,10 +36,10 @@ const ContactSection = () => {
                     scrub: 3
                 }
             })
-            gsap.from('.ContactSection_form', {
+            gsap.from('.ContactForm', {
                 x: '-20vw',
                 scrollTrigger: {
-                    trigger: '.ContactSection_form',
+                    trigger: '.ContactForm',
                     start: 'top bottom',
                     end: 'bottom 90%',
                     toggleActions: 'restart none none none',
@@ -50,6 +51,7 @@ const ContactSection = () => {
             formTimelineRef.current = gsap.timeline({ paused: true })
                 .to(formElementRef.current, { duration: 1, scale: 0.1 })
                 .to(formElementRef.current, { duration: 0.5, x: '200%' })
+                .set(formElementRef.current, { opacity: 0 })
                 .set(thanksElementRef.current, { display: 'flex', x: '-200%'})
                 .from(thanksElementRef.current, { duration: 0.5, x: '-200%', ease: Elastic.easeOut })
                 .to(smileElementRef.current, { duration: 0.2, rotate: 40, delay: -.2 })
@@ -63,11 +65,6 @@ const ContactSection = () => {
             return () => gsapContext.revert()
         })
     }, [])
-
-    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-        if (formTimelineRef.current) formTimelineRef.current.play()
-    }
 
     const handleSmileClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
         e.preventDefault()
@@ -83,23 +80,7 @@ const ContactSection = () => {
             <p className={`${className}_text`}>
                 Duis mollit amet fugiat ea sunt mollit in. Cillum culpa anim ipsum dolor officia aliqua aliqua cillum exercita nostrud consequat velit. 
             </p>
-            <form className={`${className}_form`} onSubmit={handleFormSubmit} ref={formElementRef} >
-                <div className={`${className}_inputContainer`}>
-                    <label htmlFor="name" className={`${className}_label`}>Name</label>
-                    <input type="text" className={`${className}_textInput`} />
-                </div>
-                <div className={`${className}_inputContainer`}>
-                    <label htmlFor="email" className={`${className}_label`}>Email</label>
-                    <input type="email" className={`${className}_textInput`} />
-                </div>
-                <div className={`${className}_inputContainer`}>
-                    <label htmlFor="message" className={`${className}_label`}>Message</label>
-                    <textarea name="message" id="message" className={`${className}_textarea`}></textarea>
-                </div>
-                <div className={`${className}_buttonContainer`}>
-                    <input className={`${className}_submit`} type="submit" value="Send Message" />
-                </div>
-            </form>
+            <ContactForm formElementRef={formElementRef} formTimelineRef={formTimelineRef} />
             <div className={`${className}_thanks`} ref={thanksElementRef}>
                 <p>Thanks for the Message!</p>
                 <FontAwesomeIcon icon={faSmileBeam} className={`${className}_smile`} ref={smileElementRef} onClick={handleSmileClick} />

@@ -1,6 +1,6 @@
 import gsap from 'gsap'
 import { useLayoutEffect } from 'react'
-import { ReactComponent as SvgBackground } from '../../assets/polygon-scatter-haikei-mobile.svg'
+import { ReactComponent as SvgBackground } from '../../assets/polygon-scatter-haikei-mobile2.svg'
 import './styles.css'
 
 const ProjectsSection = () => {
@@ -9,7 +9,7 @@ const ProjectsSection = () => {
         const gsapContext = gsap.context(() => {
 
             //Animations on Render
-            gsap.to(['.path1', '.path2', '.path3'], {
+            gsap.to(['.path4', '.path5', '.path6'], {
                 rotate: 360,
                 duration: 100,
                 repeat: -1,
@@ -22,7 +22,7 @@ const ProjectsSection = () => {
                 scrollTrigger: {
                     trigger: '.ProjectsSection_header',
                     start: 'top bottom',
-                    end: 'bottom 90%',
+                    end: 'bottom top',
                     toggleActions: 'restart none none none',
                     scrub: 3
                 }
@@ -35,8 +35,8 @@ const ProjectsSection = () => {
                     scrollTrigger: {
                         trigger: overlay,
                         start: 'top bottom',
-                        end: 'bottom 90%',
-                        toggleActions: 'restart none none none',
+                        end: 'center bottom',
+                        toggleActions: 'restart none none reset',
                         scrub: 3
                     }
                 })
@@ -68,6 +68,19 @@ const ProjectsSection = () => {
                         scrub: 3
                     }
                 })
+            })
+
+            //Scroll Animations - EXIT WINDOW
+            gsap.to(['.path4', '.path5', '.path6'], {
+                x: -100,
+                y: -200,
+                scrollTrigger: {
+                    trigger: '.ProjectsSection',
+                    start: 'top bottom',
+                    end: 'bottom center',
+                    toggleActions: 'restart none none none',
+                    scrub: 3
+                }
             })
             
             return () => gsapContext.revert()
@@ -120,7 +133,7 @@ const ProjectsSection = () => {
                 <div className={`${className}_descriptionContainer`}>
                     <div className={`${className}_textContainer`}>
                         <p className={`${className}_text ${className}_bold`}>TFT Roll-Down Training Tool</p>
-                        <p className={`${className}_text`}>Labore occaecat quis occaecat cillum esse aute fugiat. Exercitation est culpa adipisicing nostrud non aliqua id ipsum.</p>
+                        <p className={`${className}_text`}>A training tool I created to help practice the "roll-down" mechanic for the videogame Teamfight Tactics.</p>
                     </div>
                     <div className={`${className}_buttonContainer`}>
                         <button className={`${className}_button`}>Visit Website</button>

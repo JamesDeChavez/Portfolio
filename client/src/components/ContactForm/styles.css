@@ -1,0 +1,59 @@
+.ContactForm {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-family: 'Poppins', sans-serif;
+    background-color: #141E30;
+    color: #E2F1FF;
+    display: grid;
+    gap: 2rem;
+    padding: 2rem;
+    padding-top: 3rem;
+    border-radius: 5px;
+}
+
+.ContactForm_inputContainer {
+    position: relative;
+    display: grid;
+}
+
+.ContactForm_label {
+    position: absolute;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    margin-left: .5rem;
+}
+
+.ContactForm_textInput,
+.ContactForm_textarea {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    padding: .5rem;
+    border-radius: 5px;
+    color: #E2F1FF;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ContactForm_textInput,
+.ContactForm_textarea {
+    background-color: #243B55;
+    border: none;
+}
+
+.ContactForm_textarea {
+    resize: none;
+    height: 5rem;
+}
+
+.ContactForm_submit {
+    padding: .5em;
+    font-weight: bold;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: #00C6BD;
+    border: 1px solid #00C6BD;
+    background: linear-gradient(to left, #141E30 50%, #243B55 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+    border-radius: 5px;
+}
+
+.ContactForm_submit:hover {
+    cursor: pointer;
+    background-position: left;
+}

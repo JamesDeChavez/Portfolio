@@ -56,9 +56,14 @@ const AboutSection = () => {
         })
     }, [])
 
-    const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const handleContactClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault()
         gsap.to(window, { scrollTo: ".ContactSection", duration: 1, ease: Power1.easeOut })
+    }
+
+    const handleProjectsClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        e.preventDefault()
+        gsap.to(window, { scrollTo: ".ProjectsSection", duration: 1, ease: Power1.easeOut })
     }
 
     const className = 'AboutSection'
@@ -72,7 +77,15 @@ const AboutSection = () => {
                     Hi, I'm <span className={`${className}_bold`}>James DeChavez</span>.<br/>
                 </p>
                 <p className={`${className}_text`}>
-                    Amet fugiat velit ipsum sint anim do tempor officia officia incididunt. Ullamco ea ex proident proident. 
+                    I'm a Fullstack Developer looking for opportunites to contribute to projects that solve intersting problems. I always enjoy learning new skills and finding better ways to do things.
+                </p> 
+                <p className={`${className}_text`}>
+                    {`Check out my `} 
+                    <button 
+                        className={`${className}_projectsButton ${className}_bold`}
+                        onClick={handleProjectsClick}
+                    >Projects</button> 
+                    {` section below for examples of applications I've created to assist me in learning and to simplify areas of my routine.`}
                 </p>
             </div>
             <div className={`${className}_skillsSection`}>
@@ -89,7 +102,7 @@ const AboutSection = () => {
                 <p className={`${className}_text`}>
                     Have an opportunity that matches my skill set? Don't hesitate to reach out!
                 </p>
-                <button className={`${className}_button`} onClick={handleButtonClick}>Contact Me</button>
+                <button className={`${className}_button`} onClick={handleContactClick}>Contact Me</button>
             </div>
 
 

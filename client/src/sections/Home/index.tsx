@@ -48,7 +48,7 @@ const HomeSection = () => {
                 x: -100,
                 y: -200,
                 scrollTrigger: {
-                    trigger: '.HomeSection',
+                    trigger: root.current,
                     start: 'top top',
                     end: 'bottom top',
                     toggleActions: 'restart none none none',
@@ -58,7 +58,7 @@ const HomeSection = () => {
             gsap.to('.HomeSection_main', {
                 x: '50vw',
                 scrollTrigger: {
-                    trigger: '.HomeSection',
+                    trigger: root.current,
                     start: 'top top',
                     end: 'bottom top',
                     toggleActions: 'restart none none none',

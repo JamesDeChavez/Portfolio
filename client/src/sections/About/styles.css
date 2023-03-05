@@ -4,7 +4,7 @@
     padding-bottom: 6rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    gap: 1.5rem;
+    gap: 2rem;
     overflow: hidden;
 }
 
@@ -24,6 +24,16 @@
     gap: .5rem;
 }
 
+.AboutSection_projectsButton {
+    color: #00C6BD;
+}
+
+.AboutSection_projectsButton:hover { 
+    color: #141e30;
+}
+
+
+.AboutSection_projectsButton,
 .AboutSection_text {
     font-size: clamp(1rem, 4vw, 1.5rem);
     font-family: 'Poppins', sans-serif;

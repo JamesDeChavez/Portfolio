@@ -9,12 +9,25 @@
 .FooterSection_iconContainer {
     display: flex;
     border-bottom: solid 1px #243B55;
+    gap: 1rem;
     padding-bottom: 1rem;
+}
+
+.FooterSection_icon {
+    width: 1.5rem;
+    height: auto;
+    color: #E2F1FF;
+}
+
+.FooterSection_icon:hover {
+    cursor: pointer;
+    color: #00C6BD;
 }
 
 .FooterSection_name {
     color: #E2F1FF;
     display: flex;
+    font-size: 1rem;
 }
 
 .FooterSection_name:hover {

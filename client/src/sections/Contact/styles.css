@@ -18,65 +18,9 @@
     color: #00C6BD
 }
 
-.ContactSection_text,
-.ContactSection_form {
+.ContactSection_text {
     font-size: clamp(1rem, 4vw, 1.5rem);
     font-family: 'Poppins', sans-serif;
-}
-
-.ContactSection_form {
-    background-color: #141E30;
-    color: #E2F1FF;
-    display: grid;
-    gap: 2rem;
-    padding: 2rem;
-    border-radius: 5px;
-}
-
-.ContactSection_inputContainer {
-    position: relative;
-    display: grid;
-}
-
-.ContactSection_label {
-    position: absolute;
-    font-size: clamp(1rem, 4vw, 1.5rem);
-    margin-left: .5rem;
-}
-
-.ContactSection_textInput,
-.ContactSection_textarea {
-    font-size: clamp(1rem, 4vw, 1.5rem);
-    padding: .5rem;
-    border-radius: 5px;
-}
-
-.ContactSection_textInput,
-.ContactSection_textarea {
-    background-color: #243B55;
-    border: none;
-}
-
-.ContactSection_textarea {
-    resize: none;
-    height: 5rem;
-}
-
-.ContactSection_submit {
-    padding: .5em;
-    font-weight: bold;
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    color: #00C6BD;
-    border: 1px solid #00C6BD;
-    background: linear-gradient(to left, #141E30 50%, #243B55 50%) right;
-    background-size: 200%;
-    transition: .5s ease-out;
-    border-radius: 5px;
-}
-
-.ContactSection_submit:hover {
-    cursor: pointer;
-    background-position: left;
 }
 
 .ContactSection_thanks {
