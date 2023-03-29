@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import './styles.css'
 
-const FooterSection = () => {
+const Footer = () => {
 
     useLayoutEffect(() => {
         const gsapContext = gsap.context(() => {
@@ -48,23 +48,26 @@ const FooterSection = () => {
         gsap.to(window, { scrollTo: ".HomeSection", duration: 1, ease: Power1.easeOut })
     }
 
-    const className = 'FooterSection'
+    const className = 'Footer'
     return (
         <div className={className}>
-            <div className={`${className}_iconContainer`}>
 
+            <div className={`${className}_iconContainer`}>
                 <a href='https://www.linkedin.com/in/james-dechavez-120176142/' target="_blank" rel="noreferrer" >
                     <FontAwesomeIcon icon={faLinkedin} className={`${className}_icon`} />
                 </a>
                     
                 <a href='https://github.com/JamesDeChavez' target="_blank" rel="noreferrer" >
                     <FontAwesomeIcon icon={faGithub} className={`${className}_icon`} />
-                </a>
-            
+                </a>            
             </div>
+
             <div className={`${className}_nameContainer`}>
-                <button className={`${className}_name`} onClick={handleNameClick}>James DeChavez</button>
+                <button className={`${className}_name`} onClick={handleNameClick}>
+                    James DeChavez
+                </button>
             </div>
+            
             <div className={`${className}_text`}>
                 Fullstack Developer - Problem Solver - Automation Addict - Data Driven
             </div>
@@ -72,4 +75,4 @@ const FooterSection = () => {
     )
 }
 
-export default FooterSection
+export default Footer

@@ -78,7 +78,7 @@ const ContactSection = () => {
                 <span>{'<'}</span>Contact<span>{'/>'}</span>
             </h3>
             <p className={`${className}_text`}>
-                Duis mollit amet fugiat ea sunt mollit in. Cillum culpa anim ipsum dolor officia aliqua aliqua cillum exercita nostrud consequat velit. 
+                Use the form below to send me a message and I will get back to you as soon as possible.
             </p>
             <ContactForm formElementRef={formElementRef} formTimelineRef={formTimelineRef} />
             <div className={`${className}_thanks`} ref={thanksElementRef}>

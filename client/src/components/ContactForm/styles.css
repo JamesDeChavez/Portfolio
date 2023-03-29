@@ -28,11 +28,7 @@
     border-radius: 5px;
     color: #E2F1FF;
     font-family: 'Poppins', sans-serif;
-}
-
-.ContactForm_textInput,
-.ContactForm_textarea {
-    background-color: #243B55;
+    background-color: #243B55 !important;
     border: none;
 }
 

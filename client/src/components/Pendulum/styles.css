@@ -11,5 +11,6 @@
 .Pendulum_letter {
     font-size: clamp(2.5rem, 9vw, 6rem);
     transform-origin: 50% -100%;
-    color: #E2F1FF;    
+    color: #E2F1FF;   
+    user-select: none; 
 }

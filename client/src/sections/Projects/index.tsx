@@ -7,7 +7,6 @@ const ProjectsSection = () => {
 
     useLayoutEffect(() => {
         const gsapContext = gsap.context(() => {
-
             //Animations on Render
             gsap.to(['.path4', '.path5', '.path6'], {
                 rotate: 360,
@@ -81,13 +80,14 @@ const ProjectsSection = () => {
                     toggleActions: 'restart none none none',
                     scrub: 3
                 }
-            })
-            
+            })            
             return () => gsapContext.revert()
         })
     }, [])
 
-    const image = require('../../assets/placeholder.png')
+    const sprImage = require('../../assets/singlepagerecipes_webpage.png')
+    const tftImage = require('../../assets/tftrolldown_webpage.png')
+    const bsdImage = require('../../assets/bsdrank_webpage.png')
     const className = 'ProjectsSection'
     return (
         <div className={className} >
@@ -97,46 +97,62 @@ const ProjectsSection = () => {
             </h3>
             <div className={`${className}_projectContainer`}>
                 <div className={`${className}_imageContainer`}>
-                    <img className={`${className}_projectImage`} src={image} alt="placeholder" />
+                    <img className={`${className}_projectImage`} src={sprImage} alt="webpage" />
                     <div className={`${className}_imageOverlay`}></div>
                 </div>
                 <div className={`${className}_descriptionContainer`}>
                     <div className={`${className}_textContainer`}>
-                        <p className={`${className}_text ${className}_bold`}>TFT Roll-Down Training Tool</p>
-                        <p className={`${className}_text`}>Labore occaecat quis occaecat cillum esse aute fugiat. Exercitation est culpa adipisicing nostrud non aliqua id ipsum.</p>
+                        <p className={`${className}_text ${className}_bold`}>
+                            Single Page Recipes
+                        </p>
+                        <p className={`${className}_text`}>
+                            A website I created to help users easily learn new recipes from Youtube, save them to their recipe books, and automatically add recipe ingredients to their Amazon Fresh shopping carts. 
+                        </p>
+                        <p className={`${className}_text`}>
+                            Additionally, the single-page interface of the recipes ensures all important info is easily available while cooking. No annoying scrolling!
+                        </p>
                     </div>
                     <div className={`${className}_buttonContainer`}>
-                        <button className={`${className}_button`}>Visit Website</button>
+                        <a href="https://www.singlepagerecipes.com" target="_blank" rel='noreferrer' ><button className={`${className}_button`}>Visit Website</button></a>
                     </div>
                 </div>
             </div>
             <div className={`${className}_projectContainer`}>
                 <div className={`${className}_imageContainer`}>
-                    <img className={`${className}_projectImage`} src={image} alt="placeholder" />
+                    <img className={`${className}_projectImage`} src={bsdImage} alt="webpage" />
                     <div className={`${className}_imageOverlay`}></div>
                 </div>
                 <div className={`${className}_descriptionContainer`}>
                     <div className={`${className}_textContainer`}>
-                        <p className={`${className}_text ${className}_bold`}>TFT Roll-Down Training Tool</p>
-                        <p className={`${className}_text`}>Labore occaecat quis occaecat cillum esse aute fugiat. Exercitation est culpa adipisicing nostrud non aliqua id ipsum.</p>
+                        <p className={`${className}_text ${className}_bold`}>
+                            BSD Rank
+                        </p>
+                        <p className={`${className}_text`}>
+                            A website I created to provide users with a rank to track their weightlifting progress, similar to the ranks players earn in video games. This rank is based on weightlifting data collected for over 1.6 million individuals. 
+                        </p>
+                        <p className={`${className}_text`}>
+                            BSD Rank can help provide you with data-driven motivation to push to earn higher ranks and get stronger.
+                        </p>
                     </div>
                     <div className={`${className}_buttonContainer`}>
-                        <button className={`${className}_button`}>Visit Website</button>
+                        <a href="https://www.bsdrank.com" target="_blank" rel='noreferrer' ><button className={`${className}_button`}>Visit Website</button></a>
                     </div>
                 </div>
             </div>
             <div className={`${className}_projectContainer`}>
                 <div className={`${className}_imageContainer`}>
-                    <img className={`${className}_projectImage`} src={image} alt="placeholder" />
+                    <img className={`${className}_projectImage`} src={tftImage} alt="webpage" />
                     <div className={`${className}_imageOverlay`}></div>
                 </div>
                 <div className={`${className}_descriptionContainer`}>
                     <div className={`${className}_textContainer`}>
                         <p className={`${className}_text ${className}_bold`}>TFT Roll-Down Training Tool</p>
-                        <p className={`${className}_text`}>A training tool I created to help practice the "roll-down" mechanic for the videogame Teamfight Tactics.</p>
+                        <p className={`${className}_text`}>
+                            A training tool I created to help practice the "roll-down" mechanic for the video game Teamfight Tactics. Includes scripts and documentation for quick and easy app updates for any future changes to the game.
+                        </p>
                     </div>
                     <div className={`${className}_buttonContainer`}>
-                        <button className={`${className}_button`}>Visit Website</button>
+                        <a href="https://www.tftrolldown.com" target="_blank" rel='noreferrer' ><button className={`${className}_button`}>Visit Website</button></a>
                     </div>
                 </div>
             </div>

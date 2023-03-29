@@ -3,7 +3,7 @@ import HomeSection from './sections/Home';
 import AboutSection from './sections/About';
 import ProjectsSection from './sections/Projects';
 import ContactSection from './sections/Contact';
-import FooterSection from './components/Footer';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       <AboutSection />
       <ProjectsSection />
       <ContactSection />
-      <FooterSection/>
+      <Footer/>
     </div>
   );
 }

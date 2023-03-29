@@ -15,7 +15,7 @@ const Pendulum = () => {
                 .to(`.${className}_first`, { duration: 0.5, rotate: 0, ease: Power1.easeIn })
                 .to(`.${className}_last`, { duration: 0.5, rotate: -35, ease: Power1.easeOut })
                 .to(`.${className}_last`, { duration: 0.5, rotate: 0, ease: Power1.easeIn })  
-            return () => gsapContext.revert
+            return () => gsapContext.revert()
         }, root)
     }, [])
     

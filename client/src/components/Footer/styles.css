@@ -1,4 +1,4 @@
-.FooterSection {
+.Footer {
     background-color: #141E30;
     color: #E2F1FF;
     padding: 2rem;
@@ -6,35 +6,35 @@
     gap: 1rem;
 }
 
-.FooterSection_iconContainer {
+.Footer_iconContainer {
     display: flex;
     border-bottom: solid 1px #243B55;
     gap: 1rem;
     padding-bottom: 1rem;
 }
 
-.FooterSection_icon {
+.Footer_icon {
     width: 1.5rem;
     height: auto;
     color: #E2F1FF;
 }
 
-.FooterSection_icon:hover {
+.Footer_icon:hover {
     cursor: pointer;
     color: #00C6BD;
 }
 
-.FooterSection_name {
+.Footer_name {
     color: #E2F1FF;
     display: flex;
     font-size: 1rem;
 }
 
-.FooterSection_name:hover {
+.Footer_name:hover {
     color: #00C6BD;
 }
 
-.FooterSection_text {
+.Footer_text {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
 }

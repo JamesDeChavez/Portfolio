@@ -6,6 +6,7 @@
 .Scramble_text {
     font-size: clamp(1.2rem, 5vw, 2.5rem);
     color: #E2F1FF;
+    user-select: none;
 }
 
 

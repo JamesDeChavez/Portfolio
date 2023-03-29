@@ -36,6 +36,8 @@
 .ProjectsSection_projectContainer {
     display: grid;
     gap: 1rem;
+    max-width: 850px;
+    margin: 0 auto;
 }
 
 .ProjectsSection_imageContainer {
@@ -68,9 +70,19 @@
     text-decoration: underline;
 }
 
+.ProjectsSection_textContainer {
+    display: grid;
+    gap: 0.5rem
+}
+
 .ProjectsSection_text {
     font-size: clamp(1rem, 4vw, 1.5rem);
     font-family: 'Poppins', sans-serif;
+}
+
+.ProjectsSection_buttonContainer {
+    display: flex;
+    align-items: flex-end;
 }
 
 .ProjectsSection_button {
@@ -99,6 +111,7 @@
     }
 
     .ProjectsSection_projectContainer { 
+        max-width: none;
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
     }

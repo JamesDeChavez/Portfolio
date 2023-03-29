@@ -77,6 +77,7 @@
 .HomeSection_scrollText {
     font-size: clamp(0.8rem, 3vw, 1rem);
     color: #E2F1FF;
+    user-select: none;
 }
 
 .HomeSection_scrollTriangle {
