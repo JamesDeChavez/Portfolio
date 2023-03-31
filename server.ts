@@ -10,10 +10,11 @@ const PORT = process.env.PORT;
 
 const app = express();
 
-const whitelist = ['http://www.jdechavez.com/', 'http://jdechavez.com/', 'https://incredible-cannoli-7b0225.netlify.app/', 'https://james-portfolio.onrender.com']
+const whitelist = ['http://www.jdechavez.com/', 'http://jdechavez.com/', 'https://incredible-cannoli-7b0225.netlify.app', 'https://james-portfolio.onrender.com']
 var corsOptions = {
   origin: function (origin: any, callback: any) {
     console.log('origin', origin)
+    console.log('test', whitelist.indexOf(origin))
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true)
     } else {
