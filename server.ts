@@ -10,7 +10,7 @@ const PORT = process.env.PORT;
 
 const app = express();
 
-const whitelist = ['http://localhost:3000']
+const whitelist = ['http://www.jdechavez23.com', 'http://jdechavez23.com', 'https://incredible-cannoli-7b0225.netlify.app/']
 var corsOptions = {
   origin: function (origin: any, callback: any) {
     if (whitelist.indexOf(origin) !== -1) {
