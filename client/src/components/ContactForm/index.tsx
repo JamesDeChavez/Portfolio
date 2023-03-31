@@ -29,7 +29,7 @@ const ContactForm: React.FC<Props> = ({ formElementRef, formTimelineRef }) => {
         e.preventDefault()
         if (!name || !email || !message) return
         try {
-            const response = await fetch('http://localhost:3001/emailjs')
+            const response = await fetch('https://james-portfolio.onrender.com/emailjs')
             const data = await response.json()
             const serviceId = data.service
             const templateId = data.template
