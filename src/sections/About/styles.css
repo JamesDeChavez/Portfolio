@@ -20,7 +20,8 @@
 }
 
 .AboutSection_skillsSection {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: .5rem;
 }
 

@@ -75,6 +75,12 @@
     gap: 0.5rem
 }
 
+.ProjectsSection_freeTier {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
 .ProjectsSection_text {
     font-size: clamp(1rem, 4vw, 1.5rem);
     font-family: 'Poppins', sans-serif;
@@ -115,4 +121,8 @@
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
     }
+
+    .ProjectsSection_freeTier {
+        margin-top: -2rem;
+     }
 }

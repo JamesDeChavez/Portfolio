@@ -27,6 +27,17 @@ const ProjectsSection = () => {
                 }
             })
 
+            gsap.from('.ProjectsSection_freeTier', {
+                x: '10vw',
+                scrollTrigger: {
+                    trigger: '.ProjectsSection_header',
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    toggleActions: 'restart none none none',
+                    scrub: 3
+                }
+            })
+
             const imageOverlays = gsap.utils.toArray('.ProjectsSection_imageOverlay')
             imageOverlays.forEach((overlay: any) => {
                 gsap.to(overlay, {
@@ -95,6 +106,7 @@ const ProjectsSection = () => {
             <h3 className={`${className}_header`}>
                 <span>{'<'}</span>Projects<span>{'/>'}</span>
             </h3>
+            <p className={`${className}_freeTier`}>* Projects use Render.com free tier server hosting. Please allow up to 30 seconds for first request to server.</p>
             <div className={`${className}_projectContainer`}>
                 <div className={`${className}_imageContainer`}>
                     <img className={`${className}_projectImage`} src={sprImage} alt="webpage" />
