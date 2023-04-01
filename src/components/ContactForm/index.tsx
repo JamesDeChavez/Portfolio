@@ -28,21 +28,18 @@ const ContactForm: React.FC<Props> = ({ formElementRef, formTimelineRef }) => {
     const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (!name || !email || !message) return
-        try {
-            const response = await fetch('https://james-portfolio.onrender.com/emailjs')
-            const data = await response.json()
-            const serviceId = data.service
-            const templateId = data.template
-            const publicId = data.public
 
-            if (formElementRef.current) {
-            emailjs.sendForm(serviceId, templateId, formElementRef.current, publicId)
-                .then((result) => {
-                    console.log(result.text)
-                    if (formTimelineRef.current) formTimelineRef.current.play()
-                }, err => console.log(err.text))
-            }
-        } catch (error) {console.log(error)}
+        const serviceId = process.env.REACT_APP_SERVICE_ID
+        const templateId = process.env.REACT_APP_TEMPLATE_ID
+        const publicId = process.env.REACT_APP_EMAILJS_PUBLIC
+
+        if (formElementRef.current && serviceId && templateId && publicId) {
+        emailjs.sendForm(serviceId, templateId, formElementRef.current, publicId)
+            .then(() => {
+                if (formTimelineRef.current) formTimelineRef.current.play()
+            })
+            .catch(err => console.log(err.text))
+        }
     }
 
     const handleInputFocus = (e: (React.FocusEvent<HTMLTextAreaElement, Element> | React.FocusEvent<HTMLInputElement, Element>)) => {
