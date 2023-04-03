@@ -125,7 +125,12 @@ const ProjectsSection = () => {
                         </p>
                     </div>
                     <div className={`${className}_buttonContainer`}>
-                        <a href="https://www.singlepagerecipes.com" target="_blank" rel='noreferrer' ><button className={`${className}_button`}>Visit Website</button></a>
+                        <a href="https://www.singlepagerecipes.com" target="_blank" rel='noreferrer' >
+                            <button className={`${className}_button`}>Visit Website</button>
+                        </a>
+                        <a href="https://github.com/JamesDeChavez/SinglePageRecipes" target="_blank" rel='noreferrer' >
+                            <button className={`${className}_button`}>Github</button>
+                        </a>  
                     </div>
                 </div>
             </div>
@@ -147,7 +152,12 @@ const ProjectsSection = () => {
                         </p>
                     </div>
                     <div className={`${className}_buttonContainer`}>
-                        <a href="https://www.bsdrank.com" target="_blank" rel='noreferrer' ><button className={`${className}_button`}>Visit Website</button></a>
+                        <a href="https://www.bsdrank.com" target="_blank" rel='noreferrer' >
+                            <button className={`${className}_button`}>Visit Website</button>
+                        </a>
+                        <a href="https://github.com/JamesDeChavez/BSDRank" target="_blank" rel='noreferrer' >
+                            <button className={`${className}_button`}>Github</button>
+                        </a>  
                     </div>
                 </div>
             </div>
@@ -164,7 +174,12 @@ const ProjectsSection = () => {
                         </p>
                     </div>
                     <div className={`${className}_buttonContainer`}>
-                        <a href="https://www.tftrolldown.com" target="_blank" rel='noreferrer' ><button className={`${className}_button`}>Visit Website</button></a>
+                        <a href="https://www.tftrolldown.com" target="_blank" rel='noreferrer' >
+                            <button className={`${className}_button`}>Visit Website</button>
+                        </a>
+                        <a href="https://github.com/JamesDeChavez/tftrolldown" target="_blank" rel='noreferrer' >
+                            <button className={`${className}_button`}>Github</button>
+                        </a>  
                     </div>
                 </div>
             </div>
