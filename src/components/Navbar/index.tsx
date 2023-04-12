@@ -134,6 +134,7 @@ const Navbar = () => {
                 onClick={handleHamburgerClick}
                 onMouseEnter={handleHamburgerMouseEnter}
                 onMouseLeave={handleHamburgerMouseLeave}
+                title='Burger Icon Button'
             >
                 <svg className={`${className}_hamburger`} viewBox="0 0 100 100">
                     <rect className={`${className}_topLine ${className}_line`}
