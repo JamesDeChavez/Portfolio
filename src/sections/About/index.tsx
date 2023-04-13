@@ -77,7 +77,7 @@ const AboutSection = () => {
                     Hi, I'm <span className={`${className}_bold`}>James DeChavez</span>.<br/>
                 </p>
                 <p className={`${className}_text`}>
-                    I'm a Fullstack Developer looking for opportunites to contribute to projects that solve intersting problems. I always enjoy learning new skills and finding better ways to do things.
+                I'm a Fullstack Developer looking for opportunities to contribute to projects that solve interesting problems. I always enjoy learning new skills and finding better ways to do things.    
                 </p> 
                 <p className={`${className}_text`}>
                     {`Check out my `} 
