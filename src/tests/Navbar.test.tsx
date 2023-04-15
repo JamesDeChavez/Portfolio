@@ -1,21 +1,23 @@
-import { render, screen, act, fireEvent } from '@testing-library/react'
+import { render, screen, act } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Navbar from '../components/Navbar'
 
 describe('Navbar', () => {
-    it('should render hamburger button and be visible', () => {
+    const className = 'Navbar'
+    it('should render hamburger button and have correct class (to be visible)', () => {
         act(() => render(<Navbar/>))
         const hamburgerElement = screen.getByTitle('Burger Icon Button')
         expect(hamburgerElement).toBeInTheDocument()
-        expect(hamburgerElement).toBeVisible()
+        expect(hamburgerElement).toHaveClass(`${className}_hamburgerContainer`)
     })
-    it('should render topRow', () => {
+    it('should render header button and have correct class (for display: none)', () => {
         act(() => render(<Navbar/>))
 
-        const topRowElement = screen.getByRole('button', { name: /James DeChavez/i })
-        expect(topRowElement).toBeInTheDocument()
+        const headerButton = screen.getByRole('button', { name: /James DeChavez/i })
+        expect(headerButton).toBeInTheDocument()
+        expect(headerButton.closest('div')).toHaveClass(`${className}_topRow`)
     })
-    it('should render nav buttons', () => {
+    it('should render nav buttons and have correct class (for display: none)', () => {
         act(() => render(<Navbar/>))
 
         const homeNavButton = screen.getByRole('button', { name: /Home/i })
@@ -26,5 +28,6 @@ describe('Navbar', () => {
         expect(aboutNavButton).toBeInTheDocument()
         expect(projectsNavButton).toBeInTheDocument()
         expect(contactNavButton).toBeInTheDocument()
+        expect(homeNavButton.closest('div')).toHaveClass(`${className}_buttonsContainer`)
     })
 })
