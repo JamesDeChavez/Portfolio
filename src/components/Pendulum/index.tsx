@@ -26,14 +26,14 @@ const Pendulum = () => {
                 {Array.from(firstName).map((char, i) => {
                     let first = i === 0 ? `${className}_first` : ''
                     let last = i === firstName.length - 1 ? `${className}_last` : ''
-                    return <span className={`${className}_letter ${first} ${last}`} key={`first-${i}`}>{char}</span>
+                    return <h1 className={`${className}_letter ${first} ${last}`} key={`first-${i}`}>{char}</h1>
                 })}
             </div>
             <div className={`${className}_nameContainer`}>
                 {Array.from(lastName).map((char, i) => {
                     let first = i === 0 ? `${className}_first` : ''
                     let last = i === lastName.length - 1 ? `${className}_last` : ''
-                    return <span className={`${className}_letter ${first} ${last}`} key={`last-${i}`}>{char}</span>
+                    return <h1 className={`${className}_letter ${first} ${last}`} key={`last-${i}`}>{char}</h1>
                 })}
             </div>
         </div>

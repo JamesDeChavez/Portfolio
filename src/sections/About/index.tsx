@@ -2,7 +2,6 @@ import gsap, { Power1 } from 'gsap'
 import { useLayoutEffect } from 'react'
 import './styles.css'
 
-
 const AboutSection = () => {
     const skills = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'jQuery', 'BootStrap', 'GSAP', 'React', 'Redux', 'Jest','Apollo GraphQL', 'Node', 'Express', 'SQL', 'MongoDB', 'Git']
 
