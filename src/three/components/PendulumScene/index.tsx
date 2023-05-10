@@ -7,9 +7,13 @@ import PendulumStand from "../../groups/PendulumStand"
 import HiCube from "../../meshes/HiCube"
 import ImCube from "../../meshes/ImCube"
 import Marble from "../../meshes/Marble"
+import { gsap } from "gsap"
 
 const SetCamera = () => {    
-    useFrame(state => state.camera.lookAt(2, 0, 0))
+    useFrame((state) => {
+        gsap.to(state.camera.position, {duration: 3, x: 8, y: 1, z: 15})   
+        state.camera.lookAt(2, 0, 0)
+    })
     return <perspectiveCamera />
 }
 
@@ -19,7 +23,7 @@ interface Props {
 
 const PendulumScene: React.FC<Props> = ({ root }) => {
     return (
-        <Canvas camera={{ position: [8, 4, 15] }} >
+        <Canvas camera={{ position: [0, 4, 5] }}>
             <SetCamera />
             <directionalLight position={[0, 7, 5]} intensity={1} />
             <ambientLight intensity={0.3} />
