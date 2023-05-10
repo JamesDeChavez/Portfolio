@@ -2,6 +2,10 @@ import gsap, { Power1 } from 'gsap'
 import { useLayoutEffect } from 'react'
 import './styles.css'
 
+
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger)
+
 const AboutSection = () => {
     const skills = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'jQuery', 'BootStrap', 'GSAP', 'React', 'Redux', 'Jest','Apollo GraphQL', 'Node', 'Express', 'SQL', 'MongoDB', 'Git']
 

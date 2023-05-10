@@ -6,11 +6,11 @@
     top: 0;
     left: 0;
     width: 100vw;
-    z-index: 2;
+    z-index: 3;
 }
 
 .Navbar_topRow {
-    display: none;
+    display: flex;
     align-items: center;
     height: 4rem;
     padding-left: 5rem;
@@ -21,6 +21,10 @@
     color: #E2F1FF;
     font-size: clamp(1rem, 4vw, 1.5rem);
     display: inline;
+}
+
+.Navbar_header:hover {
+    color:#00C6BD;
 }
 
 .Navbar_hamburgerContainer {

@@ -4,10 +4,11 @@
     width: 100%;
     display: grid;
     grid-template-rows: 1fr auto;
-    align-items: center;
+    align-items: flex-end;
     text-align: center;
     overflow: hidden;
     position: relative;
+    gap: 5rem;
 }
 
 .HomeSection_background,
@@ -31,10 +32,16 @@
     display: none;
 }
 
+.HomeSection_sceneContainer {
+    position: absolute;
+    height: 100%;
+    min-width: 100%;
+}
 
 .HomeSection_main {
     display: grid;
-    gap: 1rem;
+    gap: 3rem;
+    z-index: 2;
 }
 
 .HomeSection_button {
@@ -60,6 +67,7 @@
     padding-bottom: 2rem;
     display: flex;
     place-content: center;
+    z-index: 2;
 }
 
 .HomeSection_scrollButton {

@@ -1,13 +1,8 @@
-import gsap, { Back, Circ, Power1 } from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
+import gsap, { Circ, Power1 } from 'gsap'
 import { useLayoutEffect, useRef } from 'react'
-import Pendulum from '../../components/Pendulum'
 import Scramble from '../../components/Scramble'
-import { ReactComponent as SvgBackground1 } from '../../assets/polygon-scatter-haikei-mobile.svg'
-import { ReactComponent as SvgBackground2 } from '../../assets/polygon-scatter-haikei.svg'
+import PendulumScene from '../../three/components/PendulumScene'
 import './styles.css'
-
-gsap.registerPlugin(ScrollTrigger)
 
 const HomeSection = () => {
     const triangle = useRef(null)
@@ -25,7 +20,6 @@ const HomeSection = () => {
     
     useLayoutEffect(() => {
         const gsapContext = gsap.context (() => {
-
             //Animations on Render
             gsap.to(triangle.current, {
                 duration: 0.5,
@@ -34,49 +28,17 @@ const HomeSection = () => {
                 repeat: -1,
                 yoyo: true
             })
-            gsap.from('.Pendulum', { x: '-300vw', duration: 1, ease: Back.easeOut })
-            gsap.set('.Pendulum', { clearProps: true })
-            gsap.to(['.path1', '.path2', '.path3'], {
-                rotate: 360,
-                duration: 100,
-                repeat: -1,
-                transformOrigin: 'center'
-            })
-
-            //Scroll Animations - EXIT WINDOW
-            gsap.to(['.path1', '.path2', '.path3'], {
-                x: -100,
-                y: -200,
-                scrollTrigger: {
-                    trigger: root.current,
-                    start: 'top top',
-                    end: 'bottom top',
-                    toggleActions: 'restart none none none',
-                    scrub: 3
-                }
-            })
-            gsap.to('.HomeSection_main', {
-                x: '50vw',
-                scrollTrigger: {
-                    trigger: root.current,
-                    start: 'top top',
-                    end: 'bottom top',
-                    toggleActions: 'restart none none none',
-                    scrub: 3
-                }
-            })
-        }, root)
-        
+        }, root)        
         return () => gsapContext.revert()        
     }, [])
     
     const className = 'HomeSection'
     return (
         <div className={className} ref={root} >
-            <SvgBackground1 className={`${className}_background`} />
-            <SvgBackground2 className={`${className}_backgroundWide`} />
+            <div className={`${className}_sceneContainer`}>
+                <PendulumScene root={root} />
+            </div>
             <div className={`${className}_main`}>
-                <Pendulum/>
                 <Scramble/>
                 <button className={`${className}_button`} onClick={handleContactClick}>Contact Me</button>
             </div>
