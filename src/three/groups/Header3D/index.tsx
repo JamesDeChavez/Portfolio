@@ -1,14 +1,15 @@
 import { Group, Vector3 } from "three"
 import Font from "../../meshes/Font"
 import { useRef } from "react"
-import { gsap } from "gsap"
+import { Power1, gsap } from "gsap"
 import { useFrame } from "@react-three/fiber"
 
 interface Props {
-    text: string
+    text: string,
+    scrollTo: string
 }
 
-const Header3D: React.FC<Props> = ({ text }) => {
+const Header3D: React.FC<Props> = ({ text, scrollTo }) => {
     const groupRef = useRef<Group>(null)
     const leftRef = useRef<Group>(null)
     const rightRef = useRef<Group>(null)
@@ -30,11 +31,16 @@ const Header3D: React.FC<Props> = ({ text }) => {
         gsap.to(rightRef.current!.position, {x: 0})
     }
 
+    const handleClick = () => {
+        gsap.to(window, { scrollTo: scrollTo, duration: .5, ease: Power1.easeOut })
+    }
+
     return (
         <group 
             position={[-5, 0, 0]}
             onPointerEnter={handleEnter} 
             onPointerOut={handleExit}
+            onClick={handleClick}
             ref={groupRef} 
         >
             <mesh position={[0.5, 0.5, 0]} >
