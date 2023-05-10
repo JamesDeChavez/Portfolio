@@ -104,10 +104,10 @@ const ProjectsSection = () => {
         <div className={className} >
             <SvgBackground className={`${className}_background`}/>
             <div className={`${className}_header`}>
-                <HeaderScene text='project' camPosition={new Vector3(0.4, 0, 3.5)} lookAt={new Vector3(0.4, 0, 0)} />
+                <HeaderScene text='project' camPosition={new Vector3(0.4, 0, 3.5)} lookAt={new Vector3(0.4, 0, 0)} scrollTo='.ProjectsSection' />
             </div>
             <div className={`${className}_headerWide`}>
-                <HeaderScene text='project' camPosition={new Vector3(0, 0, 2)} />
+                <HeaderScene text='project' camPosition={new Vector3(0, 0, 2)} scrollTo='.ProjectsSection' />
             </div>
             <p className={`${className}_freeTier`}>* Projects use Render.com free tier server hosting. Please allow up to 30 seconds for first request to server.</p>
             <div className={`${className}_projectContainer`}>

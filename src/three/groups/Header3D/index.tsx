@@ -38,7 +38,7 @@ const Header3D: React.FC<Props> = ({ text }) => {
             ref={groupRef} 
         >
             <mesh position={[0.5, 0.5, 0]} >
-                <boxBufferGeometry args={[length + 3, 1, 0.1]} />
+                <boxBufferGeometry args={[length + 4, 1.2, 0.1]} />
                 <meshStandardMaterial visible={false} />
             </mesh>
             

@@ -70,10 +70,10 @@ const AboutSection = () => {
     return (
         <div className={className} >
             <div className={`${className}_header`}>
-                <HeaderScene text='About' camPosition={new Vector3(0.4, 0, 3)} lookAt={new Vector3(0.4, 0, 0)} />
+                <HeaderScene text='About' camPosition={new Vector3(0.4, 0, 3)} lookAt={new Vector3(0.4, 0, 0)} scrollTo='.AboutSection' />
             </div>
             <div className={`${className}_headerWide`}>
-                <HeaderScene text='About' camPosition={new Vector3(0, 0, 2)} />
+                <HeaderScene text='About' camPosition={new Vector3(0, 0, 2)} scrollTo='.AboutSection' />
             </div>
             <div className={`${className}_textSection`}>
                 <p className={`${className}_text`}>
@@ -107,8 +107,6 @@ const AboutSection = () => {
                 </p>
                 <button className={`${className}_button`} onClick={handleContactClick}>Contact Me</button>
             </div>
-
-
         </div>
     )
 }

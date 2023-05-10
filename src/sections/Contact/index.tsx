@@ -74,10 +74,10 @@ const ContactSection = () => {
     return (
         <div className={className} >
             <div className={`${className}_header`}>
-                <HeaderScene text='contact' camPosition={new Vector3(0.4, 0, 3.5)} lookAt={new Vector3(0.4, 0, 0)} />
+                <HeaderScene text='contact' camPosition={new Vector3(0.4, 0, 3.5)} lookAt={new Vector3(0.4, 0, 0)} scrollTo='.ContactSection' />
             </div>
             <div className={`${className}_headerWide`}>
-                <HeaderScene text='contact' camPosition={new Vector3(0, 0, 2)} />
+                <HeaderScene text='contact' camPosition={new Vector3(0, 0, 2)} scrollTo='.ContactSection' />
             </div>
             <p className={`${className}_text`}>
                 Use the form below to send me a message and I will get back to you as soon as possible.
