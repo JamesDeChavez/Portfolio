@@ -18,7 +18,7 @@ interface Props {
 const HeaderScene: React.FC<Props> = ({ text, camPosition, lookAt, scrollTo }) => {
     
     const handleClick = () => {
-        gsap.to(window, { scrollTo: scrollTo, duration: 1, ease: Power1.easeOut })
+        gsap.to(window, { scrollTo: scrollTo, duration: .5, ease: Power1.easeOut })
     }
 
     return (

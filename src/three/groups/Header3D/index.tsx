@@ -21,8 +21,8 @@ const Header3D: React.FC<Props> = ({ text }) => {
     })
 
     const handleEnter = () => {
-        gsap.to(leftRef.current!.position, {x: leftRef.current!.position.x - 1})
-        gsap.to(rightRef.current!.position, {x: leftRef.current!.position.x + 1})
+        gsap.to(leftRef.current!.position, {x: leftRef.current!.position.x - 0.5})
+        gsap.to(rightRef.current!.position, {x: leftRef.current!.position.x + 0.5})
     }
 
     const handleExit = () => {
