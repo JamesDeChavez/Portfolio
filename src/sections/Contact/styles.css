@@ -10,12 +10,13 @@
 }
 
 .ContactSection_header {
-    text-align: center;
-    font-size: clamp(2rem, 9vw, 3rem);
+    display: flex;
+    margin-top: -2rem;
+    margin-bottom: -5rem;
 }
 
-.ContactSection_header > span {
-    color: #00C6BD
+.ContactSection_headerWide {
+    display: none; 
 }
 
 .ContactSection_text {
@@ -47,5 +48,14 @@
     .ContactSection {
         padding-left: 25vw;
         padding-right: 25vw;
+    }
+
+    .ContactSection_headerWide {
+        display: flex;
+        margin-bottom: -3rem;
+    }
+
+    .ContactSection_header {
+        display: none
     }
 }

@@ -2,6 +2,8 @@ import gsap from 'gsap'
 import { useLayoutEffect } from 'react'
 import { ReactComponent as SvgBackground } from '../../assets/polygon-scatter-haikei-mobile2.svg'
 import './styles.css'
+import HeaderScene from '../../three/components/HeaderScene'
+import { Vector3 } from 'three'
 
 const ProjectsSection = () => {
 
@@ -22,8 +24,7 @@ const ProjectsSection = () => {
                     trigger: '.ProjectsSection_header',
                     start: 'top bottom',
                     end: 'bottom top',
-                    toggleActions: 'restart none none none',
-                    scrub: 3
+                    toggleActions: 'restart none none none'
                 }
             })
 
@@ -33,8 +34,7 @@ const ProjectsSection = () => {
                     trigger: '.ProjectsSection_header',
                     start: 'top bottom',
                     end: 'bottom top',
-                    toggleActions: 'restart none none none',
-                    scrub: 3
+                    toggleActions: 'restart none none none'
                 }
             })
 
@@ -103,9 +103,12 @@ const ProjectsSection = () => {
     return (
         <div className={className} >
             <SvgBackground className={`${className}_background`}/>
-            <h3 className={`${className}_header`}>
-                <span>{'<'}</span>Projects<span>{'/>'}</span>
-            </h3>
+            <div className={`${className}_header`}>
+                <HeaderScene text='project' camPosition={new Vector3(0.4, 0, 3.5)} lookAt={new Vector3(0.4, 0, 0)} />
+            </div>
+            <div className={`${className}_headerWide`}>
+                <HeaderScene text='project' camPosition={new Vector3(0, 0, 2)} />
+            </div>
             <p className={`${className}_freeTier`}>* Projects use Render.com free tier server hosting. Please allow up to 30 seconds for first request to server.</p>
             <div className={`${className}_projectContainer`}>
                 <div className={`${className}_imageContainer`}>

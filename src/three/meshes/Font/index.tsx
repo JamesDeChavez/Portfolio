@@ -5,16 +5,17 @@ interface Props {
     text: string,
     position: Vector3,
     size?: number,
-    color?: string
+    color?: string,
+    height?: number
 }
 
-const Font: React.FC<Props> = ({text, position, size, color}) => {
+const Font: React.FC<Props> = ({text, position, size, color, height}) => {
     return (
         <mesh position={position} >
             <Text3D 
                 font={'/Major Mono Display_Regular.json'}
                 size={size ?? 1}
-                height={0.3}
+                height={height ?? 0.3}
             >
                 {text}
                 <meshStandardMaterial color={color ?? '#FFFFFF'} />

@@ -4,6 +4,8 @@ import './styles.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSmileBeam } from '@fortawesome/free-regular-svg-icons'
 import ContactForm from '../../components/ContactForm'
+import HeaderScene from '../../three/components/HeaderScene'
+import { Vector3 } from 'three'
 
 const ContactSection = () => {
     
@@ -22,8 +24,7 @@ const ContactSection = () => {
                     trigger: '.ContactSection_header',
                     start: 'top bottom',
                     end: 'bottom 90%',
-                    toggleActions: 'restart none none none',
-                    scrub: 3
+                    toggleActions: 'restart none none none'
                 }
             })
             gsap.from('.ContactSection_text', {
@@ -32,8 +33,7 @@ const ContactSection = () => {
                     trigger: '.ContactSection_text',
                     start: 'top bottom',
                     end: 'bottom 90%',
-                    toggleActions: 'restart none none none',
-                    scrub: 3
+                    toggleActions: 'restart none none none'
                 }
             })
             gsap.from('.ContactForm', {
@@ -42,8 +42,7 @@ const ContactSection = () => {
                     trigger: '.ContactForm',
                     start: 'top bottom',
                     end: 'bottom 90%',
-                    toggleActions: 'restart none none none',
-                    scrub: 3
+                    toggleActions: 'restart none none none'
                 }
             })
 
@@ -74,9 +73,12 @@ const ContactSection = () => {
     const className = 'ContactSection'
     return (
         <div className={className} >
-            <h3 className={`${className}_header`}>
-                <span>{'<'}</span>Contact<span>{'/>'}</span>
-            </h3>
+            <div className={`${className}_header`}>
+                <HeaderScene text='contact' camPosition={new Vector3(0.4, 0, 3.5)} lookAt={new Vector3(0.4, 0, 0)} />
+            </div>
+            <div className={`${className}_headerWide`}>
+                <HeaderScene text='contact' camPosition={new Vector3(0, 0, 2)} />
+            </div>
             <p className={`${className}_text`}>
                 Use the form below to send me a message and I will get back to you as soon as possible.
             </p>

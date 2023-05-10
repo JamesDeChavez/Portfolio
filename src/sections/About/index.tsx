@@ -1,9 +1,10 @@
 import gsap, { Power1 } from 'gsap'
 import { useLayoutEffect } from 'react'
-import './styles.css'
-
-
+import HeaderScene from '../../three/components/HeaderScene';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import './styles.css'
+import { Vector3 } from 'three';
+
 gsap.registerPlugin(ScrollTrigger)
 
 const AboutSection = () => {
@@ -19,8 +20,7 @@ const AboutSection = () => {
                     trigger: '.AboutSection_header',
                     start: 'top bottom',
                     end: 'bottom 80%',
-                    toggleActions: 'restart none none none',
-                    scrub: 3
+                    toggleActions: 'restart none none none'
                 }
             })            
             gsap.from('.AboutSection_textSection', {
@@ -29,8 +29,7 @@ const AboutSection = () => {
                     trigger: '.AboutSection_textSection',
                     start: 'top bottom',
                     end: 'bottom 80%',
-                    toggleActions: 'restart none none none',
-                    scrub: 3
+                    toggleActions: 'restart none none none'
                 }
             })            
             gsap.from('.AboutSection_skillsSection', {
@@ -39,8 +38,7 @@ const AboutSection = () => {
                     trigger: '.AboutSection_skillsSection',
                     start: 'top bottom',
                     end: 'bottom 80%',
-                    toggleActions: 'restart none none none',
-                    scrub: 3
+                    toggleActions: 'restart none none none'
                 }
             })
             gsap.from('.AboutSection_callToAction', {
@@ -50,8 +48,7 @@ const AboutSection = () => {
                     trigger: '.AboutSection_callToAction',
                     start: 'top bottom+=100',
                     end: 'bottom 95%',
-                    toggleActions: 'restart none none none',
-                    scrub: 3
+                    toggleActions: 'restart none none none'
                 }
             })
 
@@ -72,9 +69,12 @@ const AboutSection = () => {
     const className = 'AboutSection'
     return (
         <div className={className} >
-            <h3 className={`${className}_header`}>
-                <span>{'<'}</span>About<span>{'/>'}</span>
-            </h3>
+            <div className={`${className}_header`}>
+                <HeaderScene text='About' camPosition={new Vector3(0.4, 0, 3)} lookAt={new Vector3(0.4, 0, 0)} />
+            </div>
+            <div className={`${className}_headerWide`}>
+                <HeaderScene text='About' camPosition={new Vector3(0, 0, 2)} />
+            </div>
             <div className={`${className}_textSection`}>
                 <p className={`${className}_text`}>
                     Hi, I'm <span className={`${className}_bold`}>James DeChavez</span>.<br/>

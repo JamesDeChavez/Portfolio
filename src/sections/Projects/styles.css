@@ -25,8 +25,13 @@
 }
 
 .ProjectsSection_header {
-    text-align: center;
-    font-size: clamp(2rem, 9vw, 3rem);
+    display: flex;
+    margin-bottom: -5rem;
+    margin-top: -2rem;
+}
+
+.ProjectsSection_headerWide {
+    display: none;
 }
 
 .ProjectsSection_header > span{
@@ -117,6 +122,16 @@
         padding-right: 10rem;
         row-gap: 4rem;
     }
+
+    .ProjectsSection_headerWide {
+        display: flex;
+        margin-bottom: -5rem;
+    }
+
+    .ProjectsSection_header {
+        display: none
+    }
+
 
     .ProjectsSection_projectContainer { 
         max-width: none;

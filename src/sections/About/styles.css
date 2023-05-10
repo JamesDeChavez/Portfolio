@@ -9,8 +9,12 @@
 }
 
 .AboutSection_header {
-    text-align: center;
-    font-size: clamp(2rem, 9vw, 3rem);
+    display: flex;
+    margin-bottom: -3rem;
+}
+
+.AboutSection_headerWide {
+    display: none;
 }
 
 .AboutSection_textSection {
@@ -40,7 +44,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.AboutSection_header > span,
 .AboutSection_text > span {
     color: #00C6BD;
 }
@@ -94,8 +97,19 @@
         padding-right: 10rem;
         gap: 4rem;
     }
-    .AboutSection_header,
+
+    .AboutSection_headerWide {
+        display: flex;
+        margin-bottom: -3rem;
+    }
+
+    .AboutSection_header {
+        display: none
+    }
+
+    .AboutSection_headerWide,
     .AboutSection_callToAction {
         grid-column: 1 / 3;
     }
+
 }
