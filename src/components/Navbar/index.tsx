@@ -134,7 +134,7 @@ const Navbar = () => {
                 onClick={handleHamburgerClick}
                 onMouseEnter={handleHamburgerMouseEnter}
                 onMouseLeave={handleHamburgerMouseLeave}
-                title='Burger Icon Button'
+                data-testid='BurgerIconButton'
             >
                 <svg className={`${className}_hamburger`} viewBox="0 0 100 100">
                     <rect className={`${className}_topLine ${className}_line`}
@@ -165,7 +165,7 @@ const Navbar = () => {
                     <span>{`<`}</span>{`About`}<span>{`/>`}</span>
                 </button>
                 <button className={`${className}_button`} onClick={(e) => handleNavClick(e, 2)} ref={navThree}>
-                    <span>{`<`}</span>{`Projects`}<span>{`/>`}</span>
+                    <span>{`<`}</span>{`Project`}<span>{`/>`}</span>
                 </button>
                 <button className={`${className}_button`} onClick={(e) => handleNavClick(e, 3)} ref={navFour}>
                     <span>{`<`}</span>{`Contact`}<span>{`/>`}</span>

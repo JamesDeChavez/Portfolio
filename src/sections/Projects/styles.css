@@ -47,12 +47,43 @@
 
 .ProjectsSection_imageContainer {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .ProjectsSection_projectImage {
     width: 100%;
     height: auto;
     border-radius: 5px;
+}
+
+.ProjectsSection_imageButtonsContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.2rem;
+}
+
+.ProjectsSection_imageButton {
+    color: #FFFFFF;
+    border: solid 1px #FFFFFF30;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 0.4rem;
+    text-align: center;
+    place-content: center;
+    place-items: center;
+}
+
+.ProjectsSection_imageButton:hover {
+    background-color: #FFFFFF30;
+}
+
+.ProjectsSection_imageText {
+    font-size: 0.8rem;
+    user-select: none;
+    align-self: center;
+    text-align: center;
 }
 
 .ProjectsSection_imageOverlay {
@@ -70,14 +101,46 @@
     gap: 1rem;
 }
 
-.ProjectsSection_bold {
+.ProjectsSection_textSection {
+    border: solid 1px #FFFFFF30;
+    background:#FFFFFF10;
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    padding: 1rem;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.ProjectsSection_list > li {
+    margin-bottom: 0.5rem;
+}
+
+.ProjectsSection_list > li:last-child {
+    margin-bottom: 0;
+}
+
+.ProjectsSection_list {
+    margin: 0;
+    padding-left: 1.5rem;
+    gap: 0.5rem;
+    list-style: circle;
+}
+
+.ProjectsSection_projectName {
     font-weight: bold;
-    text-decoration: underline;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    border-bottom: solid 1px #FFFFFF30;
+    padding-bottom: 0.5rem;
 }
 
 .ProjectsSection_textContainer {
     display: grid;
     gap: 0.5rem
+}
+
+.ProjectsSection_sectionLabel {
+    font-weight: bolder;
+    color: #00C6BD;
 }
 
 .ProjectsSection_freeTier {
@@ -139,7 +202,20 @@
         gap: 4rem;
     }
 
+    .ProjectsSection_descriptionContainer {
+        margin-top: 2rem;
+    }
+
     .ProjectsSection_freeTier {
         margin-top: -2rem;
-     }
+    }
+
+    .ProjectsSection_imageText {
+        font-size: 1rem;
+    }
+
+    
+    .ProjectsSection_imageButton {
+        font-size: 1.5rem;
+    }
 }

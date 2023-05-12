@@ -5,7 +5,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
     z-index: 3;
 }
 
@@ -13,7 +12,8 @@
     display: flex;
     align-items: center;
     height: 4rem;
-    padding-left: 5rem;
+    padding: 0 1rem 0 5rem;
+    border: solid 1px #FFFFFF30;
     background-color: #141e30;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .Navbar_hamburger {
-    border: solid 1px #E2F1FF;
+    border: solid 1px #FFFFFF30;
     background-color: #141e3075;
     fill: #E2F1FF;
     width: 3rem;
@@ -53,8 +53,8 @@
 .Navbar_button {
     color: #E2F1FF;
     background-color: #243B55;
-    border: solid 1px #E2F1FF;
-    font-size: clamp(1rem, 8vw, 3rem);
+    border: solid 1px #FFFFFF30;
+    font-size: clamp(1rem, 8vw, 2rem);
 }
 
 

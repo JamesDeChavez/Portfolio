@@ -6,7 +6,8 @@ describe('Navbar', () => {
     const className = 'Navbar'
     it('should render hamburger button and have correct class (to be visible)', () => {
         render(<Navbar/>)
-        const hamburgerElement = screen.getByTitle('Burger Icon Button')
+        // const hamburgerElement = screen.getByTitle('Burger Icon Button')
+        const hamburgerElement = screen.getByTestId('BurgerIconButton')
         expect(hamburgerElement).toBeInTheDocument()
         expect(hamburgerElement).toHaveClass(`${className}_hamburgerContainer`)
     })

@@ -1,11 +1,16 @@
+import { useState, useLayoutEffect } from 'react'
 import gsap from 'gsap'
-import { useLayoutEffect } from 'react'
 import { ReactComponent as SvgBackground } from '../../assets/polygon-scatter-haikei-mobile2.svg'
-import './styles.css'
 import HeaderScene from '../../three/components/HeaderScene'
 import { Vector3 } from 'three'
+import { sprImages, bsdImages, tftImages } from './ProjectData'
+import './styles.css'
 
 const ProjectsSection = () => {
+    
+    const [sprIndex, setSprIndex] = useState(0)
+    const [bsdIndex, setBsdIndex] = useState(0)
+    const [tftIndex, setTftIndex] = useState(0)
 
     useLayoutEffect(() => {
         const gsapContext = gsap.context(() => {
@@ -46,13 +51,12 @@ const ProjectsSection = () => {
                         trigger: overlay,
                         start: 'top bottom',
                         end: 'center bottom',
-                        toggleActions: 'restart none none reset',
-                        scrub: 3
+                        toggleActions: 'restart none none reset'
                     }
                 })
             })
 
-            const textSections = gsap.utils.toArray('.ProjectsSection_textContainer')
+            const textSections = gsap.utils.toArray('.ProjectsSection_textSection')
             textSections.forEach((section: any) => {
                 gsap.from(section, {
                     x: '10vw',
@@ -60,8 +64,7 @@ const ProjectsSection = () => {
                         trigger: section,
                         start: 'top bottom',
                         end: 'bottom 90%',
-                        toggleActions: 'restart none none none',
-                        scrub: 3
+                        toggleActions: 'restart none none none'
                     }
                 })
             })
@@ -69,13 +72,12 @@ const ProjectsSection = () => {
             const projectButtons = gsap.utils.toArray('.ProjectsSection_button')
             projectButtons.forEach((button: any) => {
                 gsap.from(button, {
-                    x: '10vw',
+                    opacity: 0,
                     scrollTrigger: {
                         trigger: button,
                         start: 'top bottom',
-                        end: 'bottom 95%',
-                        toggleActions: 'restart none none none',
-                        scrub: 3
+                        end: 'bottom 90%',
+                        toggleActions: 'restart none none none'
                     }
                 })
             })
@@ -88,17 +90,33 @@ const ProjectsSection = () => {
                     trigger: '.ProjectsSection',
                     start: 'top bottom',
                     end: 'bottom center',
-                    toggleActions: 'restart none none none',
-                    scrub: 3
+                    toggleActions: 'restart none none none'
                 }
             })            
             return () => gsapContext.revert()
         })
     }, [])
 
-    const sprImage = require('../../assets/singlepagerecipes_webpage.png')
-    const tftImage = require('../../assets/tftrolldown_webpage.png')
-    const bsdImage = require('../../assets/bsdrank_webpage.png')
+    const handleImageButtonClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, project: string, direction: string) => {
+        e.preventDefault()
+        switch (project) {
+            case 'SPR':
+                if (direction === 'PREV') setSprIndex(prevState => prevState > 0 ? prevState - 1 : sprImages.length - 1)
+                if (direction === 'NEXT') setSprIndex(prevState => (prevState + 1) % sprImages.length)
+                break;
+            case 'BSD':
+                if (direction === 'PREV') setBsdIndex(prevState => prevState > 0 ? prevState - 1 : bsdImages.length - 1)
+                if (direction === 'NEXT') setBsdIndex(prevState => (prevState + 1) % bsdImages.length)                
+                break;
+            case 'TFT':
+                if (direction === 'PREV') setTftIndex(prevState => prevState > 0 ? prevState - 1 : tftImages.length - 1)
+                if (direction === 'NEXT') setTftIndex(prevState => (prevState + 1) % tftImages.length)
+                break;        
+            default:
+                break;
+        }
+    }
+
     const className = 'ProjectsSection'
     return (
         <div className={className} >
@@ -112,20 +130,39 @@ const ProjectsSection = () => {
             <p className={`${className}_freeTier`}>* Projects use Render.com free tier server hosting. Please allow up to 30 seconds for first request to server.</p>
             <div className={`${className}_projectContainer`}>
                 <div className={`${className}_imageContainer`}>
-                    <img className={`${className}_projectImage`} src={sprImage} alt="webpage" />
+                    <p className={`${className}_projectName`}>
+                        singlepagerecipes.com
+                    </p>
+                    <img className={`${className}_projectImage`} src={sprImages[sprIndex].image} alt="webpage" />
+                    <div className={`${className}_imageButtonsContainer`} >
+                        <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'SPR', 'PREV')} >{'<'}</button>
+                        <p className={`${className}_imageText`}>{`${sprImages[sprIndex].desc} (${sprIndex + 1}/${sprImages.length})`}</p>
+                        <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'SPR', 'NEXT')} >{'>'}</button>
+                    </div>
                     <div className={`${className}_imageOverlay`}></div>
                 </div>
                 <div className={`${className}_descriptionContainer`}>
-                    <div className={`${className}_textContainer`}>
-                        <p className={`${className}_text ${className}_bold`}>
-                            Single Page Recipes
-                        </p>
-                        <p className={`${className}_text`}>
-                            A website I created to help users easily learn new recipes from Youtube, save them to their recipe books, and automatically add recipe ingredients to their Amazon Fresh shopping carts. 
-                        </p>
-                        <p className={`${className}_text`}>
-                            Additionally, the single-page interface of the recipes ensures all important info is easily available while cooking. No annoying scrolling!
-                        </p>
+                    <div className={`${className}_textSection`}>
+                        <div className={`${className}_textContainer`}>
+                            <p className={`${className}_text`}>
+                                <span className={`${className}_sectionLabel`} >Purpose:</span> Simplify the process of learning new recipes from Youtube and ordering recipe ingredients from Amazon Fresh.
+                            </p>
+                        </div>
+                        <div className={`${className}_textContainer`}>
+                            <p className={`${className}_text`}>
+                                <span className={`${className}_sectionLabel`} >Key Features:</span>
+                            </p>
+                            <ul className={`${className}_list`}>
+                                <li className={`${className}_text`}>Youtube API connection to help users find new recipes</li>
+                                <li className={`${className}_text`}>Amazon Fresh API connection to automate ingredient ordering</li>
+                                <li className={`${className}_text`}>Single-page UI ensures all recipe info is readily available on all screen sizes</li>
+                            </ul>
+                        </div>
+                        <div className={`${className}_textContainer`}>
+                            <p className={`${className}_text`}>
+                                <span className={`${className}_sectionLabel`} >Main Tech:</span> React, Typescript, Apollo GraphQL, MongoDB, Node.js, Express
+                            </p>
+                        </div>
                     </div>
                     <div className={`${className}_buttonContainer`}>
                         <a href="https://www.singlepagerecipes.com" target="_blank" rel='noreferrer' >
@@ -139,20 +176,39 @@ const ProjectsSection = () => {
             </div>
             <div className={`${className}_projectContainer`}>
                 <div className={`${className}_imageContainer`}>
-                    <img className={`${className}_projectImage`} src={bsdImage} alt="webpage" />
+                    <p className={`${className}_projectName`}>
+                        bsdrank.com
+                    </p>
+                    <img className={`${className}_projectImage`} src={bsdImages[bsdIndex].image} alt="webpage" />
+                    <div className={`${className}_imageButtonsContainer`} >
+                        <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'BSD', 'PREV')} >{'<'}</button>
+                        <p className={`${className}_imageText`}>{`${bsdImages[bsdIndex].desc} (${bsdIndex + 1}/${bsdImages.length})`}</p>
+                        <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'BSD', 'NEXT')} >{'>'}</button>
+                    </div>
                     <div className={`${className}_imageOverlay`}></div>
                 </div>
                 <div className={`${className}_descriptionContainer`}>
-                    <div className={`${className}_textContainer`}>
-                        <p className={`${className}_text ${className}_bold`}>
-                            BSD Rank
-                        </p>
-                        <p className={`${className}_text`}>
-                            A website I created to provide users with a rank to track their weightlifting progress, similar to the ranks players earn in video games. This rank is based on weightlifting data collected for over 1.6 million individuals. 
-                        </p>
-                        <p className={`${className}_text`}>
-                            BSD Rank can help provide you with data-driven motivation to push to earn higher ranks and get stronger.
-                        </p>
+                    <div className={`${className}_textSection`} >
+                        <div className={`${className}_textContainer`}>
+                            <p className={`${className}_text`}>
+                                <span className={`${className}_sectionLabel`} >Purpose:</span> Provide users with data-driven motivation to get stronger by tracking their workouts and letting them earn ranks based on their best lifts
+                            </p>
+                        </div>
+                        <div className={`${className}_textContainer`}>
+                            <p className={`${className}_text`}>
+                                <span className={`${className}_sectionLabel`} >Key Features:</span>
+                            </p>
+                            <ul className={`${className}_list`}>
+                                <li className={`${className}_text`}>Ranking system created from analysis performed on database of over 1.6 milliion individuals</li>
+                                <li className={`${className}_text`}>Rank algorithm utilizes industry standard metrics to calculate the user's strength while normalizing for sex, bodyweight, and rep ranges</li>
+                                <li className={`${className}_text`}>Simple workout tracking interface provides users with a view of their past lifts and their strength gains over time</li>
+                            </ul>
+                        </div>
+                        <div className={`${className}_textContainer`}>
+                            <p className={`${className}_text`}>
+                                <span className={`${className}_sectionLabel`} >Main Tech:</span> React, Typescript, Apollo GraphQL, MongoDB, Node.js, Express
+                            </p>
+                        </div>
                     </div>
                     <div className={`${className}_buttonContainer`}>
                         <a href="https://www.bsdrank.com" target="_blank" rel='noreferrer' >
@@ -166,15 +222,39 @@ const ProjectsSection = () => {
             </div>
             <div className={`${className}_projectContainer`}>
                 <div className={`${className}_imageContainer`}>
-                    <img className={`${className}_projectImage`} src={tftImage} alt="webpage" />
+                    <p className={`${className}_projectName`}>
+                        tftrolldown.com
+                    </p>
+                    <img className={`${className}_projectImage`} src={tftImages[tftIndex].image} alt="webpage" />
+                    <div className={`${className}_imageButtonsContainer`} >
+                        <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'TFT', 'PREV')} >{'<'}</button>
+                        <p className={`${className}_imageText`}>{`${tftImages[tftIndex].desc} (${tftIndex + 1}/${tftImages.length})`}</p>
+                        <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'TFT', 'NEXT')} >{'>'}</button>
+                    </div>
                     <div className={`${className}_imageOverlay`}></div>
                 </div>
                 <div className={`${className}_descriptionContainer`}>
-                    <div className={`${className}_textContainer`}>
-                        <p className={`${className}_text ${className}_bold`}>TFT Roll-Down Training Tool</p>
-                        <p className={`${className}_text`}>
-                            A training tool I created to help practice the "roll-down" mechanic for the video game Teamfight Tactics. Includes scripts and documentation for quick and easy app updates for any future changes to the game.
-                        </p>
+                    <div className={`${className}_textSection`}>
+                        <div className={`${className}_textContainer`}>
+                            <p className={`${className}_text`}>
+                                <span className={`${className}_sectionLabel`} >Purpose:</span> A training tool to help players practice the "roll-down" mechanic for the video game Teamfight Tactics.
+                            </p>
+                        </div>
+                        <div className={`${className}_textContainer`}>
+                            <p className={`${className}_text`}>
+                                <span className={`${className}_sectionLabel`} >Key Features:</span>
+                            </p>
+                            <ul className={`${className}_list`}>
+                                <li className={`${className}_text`}>Utilizes Riot Games API and free use assets to mimic a real game play experience from within the training tool</li>
+                                <li className={`${className}_text`}>Cutomizeable game options to allow users to simulate any specific scenarios they choose</li>
+                                <li className={`${className}_text`}>Includes scripts and documentation for quick and easy app updates for any future changes to the game</li>
+                            </ul>
+                        </div>
+                        <div className={`${className}_textContainer`}>
+                            <p className={`${className}_text`}>
+                                <span className={`${className}_sectionLabel`} >Main Tech:</span> React, Typescript
+                            </p>
+                        </div>
                     </div>
                     <div className={`${className}_buttonContainer`}>
                         <a href="https://www.tftrolldown.com" target="_blank" rel='noreferrer' >
