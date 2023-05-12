@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect } from 'react'
+import { useState, useRef, useLayoutEffect, useEffect } from 'react'
 import gsap, { Power1 } from 'gsap'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
 import './styles.css'
@@ -20,6 +20,23 @@ const Navbar = () => {
     const hoverTimeline = useRef<gsap.core.Timeline>()
     const clickTimeline = useRef<gsap.core.Timeline>()
     const navTimeline = useRef<gsap.core.Timeline>()
+
+    useEffect(() => {
+        console.log('trigger1', navVisible)
+
+        const handleScroll = () => {
+            console.log('trigger', navVisible)
+            // if (!navVisible) return
+            clickTimeline.current!.reverse()
+            navTimeline.current!.reverse().then(() => {
+                gsap.set('.Navbar_buttonsContainer', { display: 'none'})
+                gsap.set('.Navbar_topRow', { display: 'none' })
+            })
+            setNavVisible(false)
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
     
     useLayoutEffect(() => {
         delay.current = !navVisible ? 0.2 : 0
