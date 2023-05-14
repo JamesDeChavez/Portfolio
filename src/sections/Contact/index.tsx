@@ -18,8 +18,8 @@ const ContactSection = () => {
     useLayoutEffect(() => {
         const gsapContext = gsap.context(() => {            
             //Animation on Scroll - ENTER WINDOW
-            gsap.from('.ContactSection_header', {
-                x: '-10vw',
+            gsap.fromTo('.ContactSection_header', { x: '-10vw' }, {
+                x: 0,
                 scrollTrigger: {
                     trigger: '.ContactSection_header',
                     start: 'top bottom',
@@ -27,8 +27,17 @@ const ContactSection = () => {
                     toggleActions: 'restart none none none'
                 }
             })
-            gsap.from('.ContactSection_text', {
-                x: '10vw',
+            gsap.fromTo('.ContactSection_headerWide', { x: '-10vw' }, {
+                x: 0,
+                scrollTrigger: {
+                    trigger: '.ContactSection_header',
+                    start: 'top bottom',
+                    end: 'bottom 90%',
+                    toggleActions: 'restart none none none'
+                }
+            })
+            gsap.fromTo('.ContactSection_text', { x: '10vw'}, {
+                x: 0,
                 scrollTrigger: {
                     trigger: '.ContactSection_text',
                     start: 'top bottom',
@@ -36,8 +45,8 @@ const ContactSection = () => {
                     toggleActions: 'restart none none none'
                 }
             })
-            gsap.from('.ContactForm', {
-                x: '-20vw',
+            gsap.fromTo('.ContactForm', { x: '-20vw' }, {
+                x: 0,
                 scrollTrigger: {
                     trigger: '.ContactForm',
                     start: 'top bottom',

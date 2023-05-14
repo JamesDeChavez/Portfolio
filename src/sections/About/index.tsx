@@ -14,8 +14,17 @@ const AboutSection = () => {
         const gsapContext = gsap.context(() => {
 
             //Animations on Scroll - ENTER WINDOW
-            gsap.from('.AboutSection_header', {
-                x: '-10vw',
+            gsap.fromTo('.AboutSection_header', { x: '-10vw'}, {
+                x: 0,
+                scrollTrigger: {
+                    trigger: '.AboutSection_header',
+                    start: 'top bottom',
+                    end: 'bottom 80%',
+                    toggleActions: 'restart none none none'
+                }
+            }) 
+            gsap.fromTo('.AboutSection_headerWide', { x: '-10vw' }, {
+                x: 0,
                 scrollTrigger: {
                     trigger: '.AboutSection_header',
                     start: 'top bottom',
@@ -23,8 +32,8 @@ const AboutSection = () => {
                     toggleActions: 'restart none none none'
                 }
             })            
-            gsap.from('.AboutSection_textSection', {
-                x: '-10vw',
+            gsap.fromTo('.AboutSection_textSection', { x: '-10vw' }, {
+                x: 0,
                 scrollTrigger: {
                     trigger: '.AboutSection_textSection',
                     start: 'top bottom',
@@ -32,8 +41,8 @@ const AboutSection = () => {
                     toggleActions: 'restart none none none'
                 }
             })            
-            gsap.from('.AboutSection_skillsSection', {
-                x: '20vw',
+            gsap.fromTo('.AboutSection_skillsSection', { x: '20vw' }, {
+                x: 0,
                 scrollTrigger: {
                     trigger: '.AboutSection_skillsSection',
                     start: 'top bottom',
@@ -41,8 +50,8 @@ const AboutSection = () => {
                     toggleActions: 'restart none none none'
                 }
             })
-            gsap.from('.AboutSection_callToAction', {
-                x: '-10vw',
+            gsap.fromTo('.AboutSection_callToAction', { x: '-10vw' }, {
+                x: 0,
                 transformOrigin: 'left',
                 scrollTrigger: {
                     trigger: '.AboutSection_callToAction',
