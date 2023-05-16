@@ -53,11 +53,11 @@ const Footer = () => {
         <div className={className}>
 
             <div className={`${className}_iconContainer`}>
-                <a href='https://www.linkedin.com/in/james-dechavez-120176142/' target="_blank" rel="noreferrer" >
+                <a href='https://www.linkedin.com/in/james-dechavez-120176142/' target="_blank" rel="noreferrer" aria-label='Linkedin Link' >
                     <FontAwesomeIcon icon={faLinkedin} className={`${className}_icon`} />
                 </a>
                     
-                <a href='https://github.com/JamesDeChavez' target="_blank" rel="noreferrer" >
+                <a href='https://github.com/JamesDeChavez' target="_blank" rel="noreferrer" aria-label='Github Link' >
                     <FontAwesomeIcon icon={faGithub} className={`${className}_icon`} />
                 </a>            
             </div>

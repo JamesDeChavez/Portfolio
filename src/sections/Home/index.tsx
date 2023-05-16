@@ -43,7 +43,7 @@ const HomeSection = () => {
                 <button className={`${className}_button`} onClick={handleContactClick}>Contact Me</button>
             </div>
             <div className={`${className}_scrollContainer`}>
-                <button className={`${className}_scrollButton`} onClick={handleScrollClick}>
+                <button className={`${className}_scrollButton`} onClick={handleScrollClick} >
                     <span className={`${className}_scrollText`}>Scroll</span>
                     <svg className={`${className}_scrollTriangle`} viewBox="0 0 100 50" ref={triangle}>
                         <polygon points='5,5 95,5 45,50'/>

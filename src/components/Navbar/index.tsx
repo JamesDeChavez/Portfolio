@@ -152,6 +152,7 @@ const Navbar = () => {
                 onMouseEnter={handleHamburgerMouseEnter}
                 onMouseLeave={handleHamburgerMouseLeave}
                 data-testid='BurgerIconButton'
+                aria-label='Navbar Button'
             >
                 <svg className={`${className}_hamburger`} viewBox="0 0 100 100">
                     <rect className={`${className}_topLine ${className}_line`}
