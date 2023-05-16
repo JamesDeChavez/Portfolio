@@ -174,11 +174,11 @@ const ProjectsSection = () => {
                         </div>
                     </div>
                     <div className={`${className}_buttonContainer`}>
-                        <a href="https://www.singlepagerecipes.com" target="_blank" rel='noreferrer' >
-                            <button className={`${className}_button`}>Visit Website</button>
+                        <a className={`${className}_button`} href="https://www.singlepagerecipes.com" target="_blank" rel='noreferrer' >
+                            Visit Website
                         </a>
-                        <a href="https://github.com/JamesDeChavez/SinglePageRecipes" target="_blank" rel='noreferrer' >
-                            <button className={`${className}_button`}>Github</button>
+                        <a className={`${className}_button`} href="https://github.com/JamesDeChavez/SinglePageRecipes" target="_blank" rel='noreferrer' >
+                            Github
                         </a>  
                     </div>
                 </div>
@@ -220,11 +220,11 @@ const ProjectsSection = () => {
                         </div>
                     </div>
                     <div className={`${className}_buttonContainer`}>
-                        <a href="https://www.bsdrank.com" target="_blank" rel='noreferrer' >
-                            <button className={`${className}_button`}>Visit Website</button>
+                        <a className={`${className}_button`} href="https://www.bsdrank.com" target="_blank" rel='noreferrer' >
+                            Visit Website
                         </a>
-                        <a href="https://github.com/JamesDeChavez/BSDRank" target="_blank" rel='noreferrer' >
-                            <button className={`${className}_button`}>Github</button>
+                        <a className={`${className}_button`} href="https://github.com/JamesDeChavez/BSDRank" target="_blank" rel='noreferrer' >
+                            Github
                         </a>  
                     </div>
                 </div>
@@ -266,11 +266,11 @@ const ProjectsSection = () => {
                         </div>
                     </div>
                     <div className={`${className}_buttonContainer`}>
-                        <a href="https://www.tftrolldown.com" target="_blank" rel='noreferrer' >
-                            <button className={`${className}_button`}>Visit Website</button>
+                        <a className={`${className}_button`} href="https://www.tftrolldown.com" target="_blank" rel='noreferrer' >
+                            Visit Website
                         </a>
-                        <a href="https://github.com/JamesDeChavez/tftrolldown" target="_blank" rel='noreferrer' >
-                            <button className={`${className}_button`}>Github</button>
+                        <a className={`${className}_button`} href="https://github.com/JamesDeChavez/tftrolldown" target="_blank" rel='noreferrer' >
+                            Github
                         </a>  
                     </div>
                 </div>
