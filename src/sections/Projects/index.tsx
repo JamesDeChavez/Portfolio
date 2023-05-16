@@ -110,34 +110,16 @@ const ProjectsSection = () => {
         e.preventDefault()
         switch (project) {
             case 'SPR':
-                if (direction === 'PREV') {
-                    setSprIndex(prevState => prevState > 0 ? prevState - 1 : sprImages.length - 1)
-                    gsap.fromTo(`.${className}_sprImage`, { x: '-100%'}, { duration: 0.5, x: 0 })
-                }
-                if (direction === 'NEXT') {
-                    setSprIndex(prevState => (prevState + 1) % sprImages.length)
-                    gsap.fromTo(`.${className}_sprImage`, { x: '100%' }, { duration: 0.5, x: 0})
-                }
+                if (direction === 'PREV') setSprIndex(prevState => prevState > 0 ? prevState - 1 : sprImages.length - 1)
+                if (direction === 'NEXT') setSprIndex(prevState => (prevState + 1) % sprImages.length)
                 break;
             case 'BSD':
-                if (direction === 'PREV') {
-                    setBsdIndex(prevState => prevState > 0 ? prevState - 1 : bsdImages.length - 1)
-                    gsap.fromTo(`.${className}_bsdImage`, { x: '-100%'}, { duration: 0.5, x: 0 })
-                }
-                if (direction === 'NEXT') {
-                    setBsdIndex(prevState => (prevState + 1) % bsdImages.length)
-                    gsap.fromTo(`.${className}_bsdImage`, { x: '100%' }, { duration: 0.5, x: 0})
-                }             
+                if (direction === 'PREV') setBsdIndex(prevState => prevState > 0 ? prevState - 1 : bsdImages.length - 1)
+                if (direction === 'NEXT') setBsdIndex(prevState => (prevState + 1) % bsdImages.length)             
                 break;
             case 'TFT':
-                if (direction === 'PREV') {
-                    setTftIndex(prevState => prevState > 0 ? prevState - 1 : tftImages.length - 1)
-                    gsap.fromTo(`.${className}_tftImage`, { x: '-100%'}, { duration: 0.5, x: 0 })
-                }
-                if (direction === 'NEXT') {
-                    setTftIndex(prevState => (prevState + 1) % tftImages.length)
-                    gsap.fromTo(`.${className}_tftImage`, { x: '100%' }, { duration: 0.5, x: 0})
-                }
+                if (direction === 'PREV') setTftIndex(prevState => prevState > 0 ? prevState - 1 : tftImages.length - 1)
+                if (direction === 'NEXT') setTftIndex(prevState => (prevState + 1) % tftImages.length)
                 break;        
             default:
                 break;
