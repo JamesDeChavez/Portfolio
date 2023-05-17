@@ -6,8 +6,7 @@ import { Vector3 } from 'three'
 import { sprImages, bsdImages, tftImages } from './ProjectData'
 import './styles.css'
 
-const ProjectsSection = () => {
-    
+const ProjectsSection = () => {    
     const [sprIndex, setSprIndex] = useState(0)
     const [bsdIndex, setBsdIndex] = useState(0)
     const [tftIndex, setTftIndex] = useState(0)

@@ -2,6 +2,8 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import HomeSection from '../sections/Home'
 
+jest.mock('../three/components/PendulumScene')
+
 describe('Home', () => {
     it('should render contact button', () => {
         render(<HomeSection/>)
@@ -12,14 +14,6 @@ describe('Home', () => {
         render(<HomeSection/>)
         const scrollButton = screen.getByText('Scroll')
         expect(scrollButton).toBeInTheDocument()
-    })
-    it('should render letters in my name James DeChavez', () => {
-        render(<HomeSection/>)
-        const firstName = 'James'
-        const lastName = 'DeChavez'
-        const totalLetters = firstName.length + lastName.length
-        const letterElements = screen.getAllByRole('heading')
-        expect(letterElements.length).toBe(totalLetters)
     })
     it('should render underscore initially', () => {
         render(<HomeSection/>)

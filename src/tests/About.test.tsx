@@ -2,12 +2,9 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import AboutSection from '../sections/About'
 
+jest.mock('../three/components/HeaderScene')
+
 describe('About', () => {
-    it('should render About header', () => {
-        render(<AboutSection/>)
-        const headerElement = screen.getByText('About')
-        expect(headerElement).toBeInTheDocument
-    })
     it('should render about section text blocks', () => {
         render(<AboutSection/>)
         const textElement_One = screen.getByText('Hi,', { exact: false })

@@ -1758,6 +1758,11 @@
     suspend-react "^0.0.8"
     zustand "^3.7.1"
 
+"@react-three/test-renderer@^8.1.2":
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/@react-three/test-renderer/-/test-renderer-8.1.2.tgz#85b8fde2249b7d3743e7fb6afaebe25873079182"
+  integrity sha512-1penh4ydTUXsWNtU6TpfxGebqx949GYDS0cwEWQH580/xkuKoXsnPTayKOcOxuhN+iaD2ySackNjxpQ1YolmZA==
+
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
   resolved "https://registry.npmjs.org/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz"

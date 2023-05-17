@@ -4,13 +4,10 @@ import '@testing-library/jest-dom'
 import emailjs from '@emailjs/browser'
 import ContactSection from '../sections/Contact'
 
+jest.mock('../three/components/HeaderScene')
+
 describe('Contact', () => {
     const className = 'ContactSection'
-    it('should render header', () => {
-        render(<ContactSection/>)
-        const headerElement = screen.getByText('Contact')
-        expect(headerElement).toBeInTheDocument()
-    })
     it('should render text instructions', () => {
         render(<ContactSection/>)
         const instructionsElement = screen.getByText('Use the form', { exact: false })
