@@ -1,14 +1,13 @@
 import { useLayoutEffect, useRef } from 'react'
 import gsap, { Bounce, Circ, Elastic } from 'gsap'
-import './styles.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSmileBeam } from '@fortawesome/free-regular-svg-icons'
 import ContactForm from '../../components/ContactForm'
 import HeaderScene from '../../three/components/HeaderScene'
 import { Vector3 } from 'three'
+import './styles.css'
 
-const ContactSection = () => {
-    
+const ContactSection = () => {    
     const formElementRef = useRef(null)
     const thanksElementRef = useRef(null)
     const smileElementRef = useRef(null)

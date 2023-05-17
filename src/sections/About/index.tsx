@@ -2,8 +2,8 @@ import gsap, { Power1 } from 'gsap'
 import { useLayoutEffect } from 'react'
 import HeaderScene from '../../three/components/HeaderScene';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import './styles.css'
 import { Vector3 } from 'three';
+import './styles.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -60,7 +60,6 @@ const AboutSection = () => {
                     toggleActions: 'restart none none none'
                 }
             })
-
             return () => gsapContext.revert()
         })
     }, [])

@@ -137,7 +137,9 @@ const ProjectsSection = () => {
                 <HeaderScene text='project' camPosition={new Vector3(0, 0, 2)} scrollTo='.ProjectsSection' />
             </div>
             <p className={`${className}_freeTier`}>* Projects use Render.com free tier server hosting. Please allow up to 30 seconds for first request to server.</p>
+
             <div className={`${className}_projectContainer`}>
+
                 <div className={`${className}_imageContainer`}>
                     <p className={`${className}_projectName`}>
                         singlepagerecipes.com
@@ -150,6 +152,7 @@ const ProjectsSection = () => {
                     </div>
                     <div className={`${className}_imageOverlay`}></div>
                 </div>
+
                 <div className={`${className}_descriptionContainer`}>
                     <div className={`${className}_textSection`}>
                         <div className={`${className}_textContainer`}>
@@ -173,6 +176,7 @@ const ProjectsSection = () => {
                             </p>
                         </div>
                     </div>
+
                     <div className={`${className}_buttonContainer`}>
                         <a className={`${className}_button`} href="https://www.singlepagerecipes.com" target="_blank" rel='noreferrer' >
                             Visit Website
@@ -181,9 +185,13 @@ const ProjectsSection = () => {
                             Github
                         </a>  
                     </div>
+
                 </div>
+
             </div>
+
             <div className={`${className}_projectContainer`}>
+
                 <div className={`${className}_imageContainer`}>
                     <p className={`${className}_projectName`}>
                         bsdrank.com
@@ -196,6 +204,7 @@ const ProjectsSection = () => {
                     </div>
                     <div className={`${className}_imageOverlay`}></div>
                 </div>
+
                 <div className={`${className}_descriptionContainer`}>
                     <div className={`${className}_textSection`} >
                         <div className={`${className}_textContainer`}>
@@ -219,6 +228,7 @@ const ProjectsSection = () => {
                             </p>
                         </div>
                     </div>
+
                     <div className={`${className}_buttonContainer`}>
                         <a className={`${className}_button`} href="https://www.bsdrank.com" target="_blank" rel='noreferrer' >
                             Visit Website
@@ -227,9 +237,13 @@ const ProjectsSection = () => {
                             Github
                         </a>  
                     </div>
+
                 </div>
+
             </div>
+
             <div className={`${className}_projectContainer`}>
+
                 <div className={`${className}_imageContainer`}>
                     <p className={`${className}_projectName`}>
                         tftrolldown.com
@@ -242,6 +256,7 @@ const ProjectsSection = () => {
                     </div>
                     <div className={`${className}_imageOverlay`}></div>
                 </div>
+
                 <div className={`${className}_descriptionContainer`}>
                     <div className={`${className}_textSection`}>
                         <div className={`${className}_textContainer`}>
@@ -265,6 +280,7 @@ const ProjectsSection = () => {
                             </p>
                         </div>
                     </div>
+
                     <div className={`${className}_buttonContainer`}>
                         <a className={`${className}_button`} href="https://www.tftrolldown.com" target="_blank" rel='noreferrer' >
                             Visit Website
@@ -273,7 +289,9 @@ const ProjectsSection = () => {
                             Github
                         </a>  
                     </div>
+                    
                 </div>
+                
             </div>
             
         </div>
