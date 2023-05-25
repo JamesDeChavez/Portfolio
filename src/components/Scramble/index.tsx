@@ -3,7 +3,7 @@ import { randomSelectFromArray } from '../../utils/functions';
 import './styles.css'
 
 const Scramble = () => {
-    const wordsToScramble = ['Fullstack_Developer', 'Problem_Solver', 'Automation_Addict', 'Data_Driven']
+    const wordsToScramble = ['Software_Engineer', 'Problem_Solver', 'Automation_Addict', 'Data_Driven']
     const charsForScramble = 'ZXQWYFRL!<>+_?@#$%&()'
 
     const [currentWord, setCurrentWord] = useState<string[]>([])    
@@ -78,7 +78,7 @@ const Scramble = () => {
     }
 
     useEffect(() => {
-        setCurrentWord('Fullstack_Developer'.split(''))
+        setCurrentWord(wordsToScramble[0].split(''))
     }, [])
     
     useEffect(() => {

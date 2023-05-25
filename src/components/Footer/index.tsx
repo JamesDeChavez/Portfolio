@@ -69,7 +69,7 @@ const Footer = () => {
             </div>
             
             <div className={`${className}_text`}>
-                Fullstack Developer - Problem Solver - Automation Addict - Data Driven
+                Software Engineer - Problem Solver - Automation Addict - Data Driven
             </div>
         </div>
     )
