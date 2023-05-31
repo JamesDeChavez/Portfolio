@@ -45,12 +45,19 @@
     margin: 0 auto;
 }
 
-.ProjectsSection_imageContainer {
+.ProjectsSection_leftContainer {
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     overflow-x: hidden;
+}
+
+.ProjectsSection_projectImageContainer {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
 }
 
 .ProjectsSection_projectImage {

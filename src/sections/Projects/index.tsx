@@ -109,16 +109,46 @@ const ProjectsSection = () => {
         e.preventDefault()
         switch (project) {
             case 'SPR':
-                if (direction === 'PREV') setSprIndex(prevState => prevState > 0 ? prevState - 1 : sprImages.length - 1)
-                if (direction === 'NEXT') setSprIndex(prevState => (prevState + 1) % sprImages.length)
+                if (direction === 'PREV') {
+                    if (sprIndex === 0) return
+                    const translation = `${(sprIndex - 1) * -100}%`
+                    gsap.to(`.${className}_sprImage`, 0.5, {x: translation })
+                    setSprIndex(prevState => prevState > 0 ? prevState - 1 : sprImages.length - 1)
+                }
+                if (direction === 'NEXT') {
+                    if (sprIndex === sprImages.length - 1) return
+                    const translation = `${(sprIndex + 1) * -100}%`
+                    gsap.to(`.${className}_sprImage`, 0.5, {x: translation })
+                    setSprIndex(prevState => (prevState + 1) % sprImages.length)
+                }
                 break;
             case 'BSD':
-                if (direction === 'PREV') setBsdIndex(prevState => prevState > 0 ? prevState - 1 : bsdImages.length - 1)
-                if (direction === 'NEXT') setBsdIndex(prevState => (prevState + 1) % bsdImages.length)             
+                if (direction === 'PREV') {
+                    if (bsdIndex === 0) return
+                    const translation = `${(bsdIndex - 1) * -100}%`
+                    gsap.to(`.${className}_bsdImage`, 0.5, {x: translation })
+                    setBsdIndex(prevState => prevState > 0 ? prevState - 1 : bsdImages.length - 1)
+                }
+                if (direction === 'NEXT') {
+                    if (bsdIndex === bsdImages.length - 1) return
+                    const translation = `${(bsdIndex + 1) * -100}%`
+                    gsap.to(`.${className}_bsdImage`, 0.5, {x: translation })
+                    setBsdIndex(prevState => (prevState + 1) % bsdImages.length)
+                }             
                 break;
             case 'TFT':
-                if (direction === 'PREV') setTftIndex(prevState => prevState > 0 ? prevState - 1 : tftImages.length - 1)
-                if (direction === 'NEXT') setTftIndex(prevState => (prevState + 1) % tftImages.length)
+                if (direction === 'PREV') {
+                    if (tftIndex === 0) return
+                    const translation = `${(tftIndex - 1) * -100}%`
+                    gsap.to(`.${className}_tftImage`, 0.5, {x: translation })
+                    setTftIndex(prevState => prevState > 0 ? prevState - 1 : tftImages.length - 1)
+                }
+                if (direction === 'NEXT') {
+                    if (tftIndex === tftImages.length - 1) return
+                    const translation = `${(tftIndex + 1) * -100}%`
+                    gsap.to(`.${className}_tftImage`, 0.5, {x: translation })
+                    setTftIndex(prevState => (prevState + 1) % tftImages.length)
+                }
                 break;        
             default:
                 break;
@@ -139,11 +169,17 @@ const ProjectsSection = () => {
 
             <div className={`${className}_projectContainer`}>
 
-                <div className={`${className}_imageContainer`}>
+                <div className={`${className}_leftContainer`}>
                     <p className={`${className}_projectName`}>
                         singlepagerecipes.com
                     </p>
-                    <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[sprIndex].image} alt="webpage" />
+                    <div className={`${className}_projectImageContainer`}>
+                        <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[0].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[1].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[2].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[3].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[4].image} alt="webpage" />
+                    </div>
                     <div className={`${className}_imageButtonsContainer`} >
                         <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'SPR', 'PREV')} >{'<'}</button>
                         <p className={`${className}_imageText`}>{`${sprImages[sprIndex].desc} (${sprIndex + 1}/${sprImages.length})`}</p>
@@ -191,11 +227,16 @@ const ProjectsSection = () => {
 
             <div className={`${className}_projectContainer`}>
 
-                <div className={`${className}_imageContainer`}>
+                <div className={`${className}_leftContainer`}>
                     <p className={`${className}_projectName`}>
                         bsdrank.com
                     </p>
-                    <img className={`${className}_projectImage ${className}_bsdImage`} src={bsdImages[bsdIndex].image} alt="webpage" />
+                    <div className={`${className}_projectImageContainer`}>
+                        <img className={`${className}_projectImage ${className}_bsdImage`} src={bsdImages[0].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_bsdImage`} src={bsdImages[1].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_bsdImage`} src={bsdImages[2].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_bsdImage`} src={bsdImages[3].image} alt="webpage" />
+                    </div>
                     <div className={`${className}_imageButtonsContainer`} >
                         <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'BSD', 'PREV')} >{'<'}</button>
                         <p className={`${className}_imageText`}>{`${bsdImages[bsdIndex].desc} (${bsdIndex + 1}/${bsdImages.length})`}</p>
@@ -243,11 +284,15 @@ const ProjectsSection = () => {
 
             <div className={`${className}_projectContainer`}>
 
-                <div className={`${className}_imageContainer`}>
+                <div className={`${className}_leftContainer`}>
                     <p className={`${className}_projectName`}>
                         tftrolldown.com
                     </p>
-                    <img className={`${className}_projectImage ${className}_tftImage`} src={tftImages[tftIndex].image} alt="webpage" />
+                    <div className={`${className}_projectImageContainer`}>
+                        <img className={`${className}_projectImage ${className}_tftImage`} src={tftImages[0].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_tftImage`} src={tftImages[1].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_tftImage`} src={tftImages[2].image} alt="webpage" />
+                    </div>
                     <div className={`${className}_imageButtonsContainer`} >
                         <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'TFT', 'PREV')} >{'<'}</button>
                         <p className={`${className}_imageText`}>{`${tftImages[tftIndex].desc} (${tftIndex + 1}/${tftImages.length})`}</p>
