@@ -114,3 +114,12 @@
     }
 
 }
+
+@media screen and (max-height: 600px) {
+    .AboutSection {
+        grid-template-columns: 4fr 3fr;
+        padding: 2rem 5rem;
+        gap: 1rem;
+        column-gap: 3rem;
+    }
+}

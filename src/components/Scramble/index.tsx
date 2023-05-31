@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, useMemo } from 'react';
 import { randomSelectFromArray } from '../../utils/functions';
 import './styles.css'
 
 const Scramble = () => {
-    const wordsToScramble = ['Software_Engineer', 'Problem_Solver', 'Automation_Addict', 'Data_Driven']
+    const wordsToScramble = useMemo(() => ['Software_Engineer', 'Problem_Solver', 'Automation_Addict', 'Data_Driven'], [])
     const charsForScramble = 'ZXQWYFRL!<>+_?@#$%&()'
 
     const [currentWord, setCurrentWord] = useState<string[]>([])    
@@ -79,7 +79,7 @@ const Scramble = () => {
 
     useEffect(() => {
         setCurrentWord(wordsToScramble[0].split(''))
-    }, [])
+    }, [wordsToScramble])
     
     useEffect(() => {
         savedCallback.current = updateScrambleCallback

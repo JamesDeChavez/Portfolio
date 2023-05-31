@@ -221,3 +221,14 @@
         font-size: 1.5rem;
     }
 }
+
+@media screen and (max-height: 600px) {
+    .ProjectsSection {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    .ProjectsSection_projectContainer {
+        gap: 2rem;
+    }
+}

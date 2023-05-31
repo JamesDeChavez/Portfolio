@@ -9,6 +9,11 @@
     user-select: none;
 }
 
+@media screen and (max-height: 600px) {
+    .Scramble_text {
+        font-size: 2rem
+    }
+}
 
 
 

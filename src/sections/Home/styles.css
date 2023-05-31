@@ -106,4 +106,17 @@
     }
 }
 
+@media screen and (max-height: 600px) {
+    .HomeSection {
+        gap: 5rem;
+    }
+    .HomeSection_main {
+        gap: 1rem;
+    }
+    .HomeSection_button {
+        font-size: 1rem;
+        width: 200px;
+    }
+}
+
 
