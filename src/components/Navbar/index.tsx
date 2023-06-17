@@ -22,11 +22,7 @@ const Navbar = () => {
     const navTimeline = useRef<gsap.core.Timeline>()
 
     useEffect(() => {
-        console.log('trigger1', navVisible)
-
         const handleScroll = () => {
-            console.log('trigger', navVisible)
-            // if (!navVisible) return
             clickTimeline.current!.reverse()
             navTimeline.current!.reverse().then(() => {
                 gsap.set('.Navbar_buttonsContainer', { display: 'none'})
