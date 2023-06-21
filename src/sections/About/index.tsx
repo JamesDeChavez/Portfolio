@@ -8,7 +8,7 @@ import './styles.css'
 gsap.registerPlugin(ScrollTrigger)
 
 const AboutSection = () => {
-    const skills = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'jQuery', 'BootStrap', 'GSAP', 'React', 'Redux', 'Jest','Apollo GraphQL', 'Node.js', 'Express', 'Go', 'SQL', 'MongoDB', 'Three.js']
+    const skills = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'jQuery', 'BootStrap', 'GSAP', 'React', 'Redux', 'AWS', 'Jest','Apollo GraphQL', 'Node.js', 'Express', 'Go', 'SQL', 'MongoDB', 'Three.js']
 
     useLayoutEffect(() => {
         const gsapContext = gsap.context(() => {
