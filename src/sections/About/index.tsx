@@ -3,6 +3,7 @@ import { useLayoutEffect } from 'react'
 import HeaderScene from '../../three/components/HeaderScene';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Vector3 } from 'three';
+import awsCert from '../../assets/aws-certified-solutions-architect-associate.png'
 import './styles.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -107,6 +108,11 @@ const AboutSection = () => {
                     {skills.map((skill, i) => {
                         return <p className={`${className}_skill`} key={i}>{skill}</p>
                     })}
+                </div>
+                <div className={`${className}_certsContainer`}>
+                    <a href="https://www.credly.com/badges/52500baa-5685-4880-9fa9-94c2d84634b9/public_url" target="_blank" rel="noreferrer">
+                        <img className={`${className}_certImage`} src={awsCert} alt="AWS Certified Solutions Architect Associate Badge" />
+                    </a>
                 </div>
             </div>
             <div className={`${className}_callToAction`}>
