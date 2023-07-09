@@ -1,3 +1,7 @@
+import skcImage from '../../assets/speedknightchallenge_01.jpg'
+import skcImage2 from '../../assets/speedknightchallenge_02.jpg'
+import skcImage3 from '../../assets/speedknightchallenge_03.jpg'
+import skcImage4 from '../../assets/speedknightchallenge_04.jpg'
 import sprImage from '../../assets/singlepagerecipes_webpage.jpg'
 import sprImage2 from '../../assets/singlepagerecipes_webpage2.jpg'
 import sprImage3 from '../../assets/singlepagerecipes_webpage3.jpg'
@@ -10,6 +14,13 @@ import bsdImage4 from '../../assets/bsdrank_webpage4.jpg'
 import tftImage from '../../assets/tftrolldown_webpage.jpg'
 import tftImage2 from '../../assets/tftrolldown_webpage2.jpg'
 import tftImage3 from '../../assets/tftrolldown_webpage3.jpg'
+
+export const skcImages = [
+    { image: skcImage, desc: 'game: capture as many pawns as you can in 60 seconds' }, 
+    { image: skcImage2, desc: 'track your scores and compare to global statistics' },
+    { image: skcImage3, desc: 'create an account with email or using google account' },
+    { image: skcImage4, desc: 'light/dark mode toggle for improved ui experience' }
+]
 
 export const sprImages = [
     { image: sprImage, desc: 'landing page' }, 
@@ -28,5 +39,4 @@ export const tftImages = [
     { image: tftImage, desc: 'customize game options for training tool' },
     { image: tftImage2, desc: 'play training tool using the same controls as the video game' },
     { image: tftImage3, desc: 'post-game menu - analyze games to improve' }
-
 ]

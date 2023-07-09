@@ -3,10 +3,11 @@ import gsap from 'gsap'
 import { ReactComponent as SvgBackground } from '../../assets/polygon-scatter-haikei-mobile2.svg'
 import HeaderScene from '../../three/components/HeaderScene'
 import { Vector3 } from 'three'
-import { sprImages, bsdImages, tftImages } from './ProjectData'
+import { sprImages, bsdImages, tftImages, skcImages } from './ProjectData'
 import './styles.css'
 
 const ProjectsSection = () => {    
+    const [skcIndex, setSkcIndex] = useState(0)
     const [sprIndex, setSprIndex] = useState(0)
     const [bsdIndex, setBsdIndex] = useState(0)
     const [tftIndex, setTftIndex] = useState(0)
@@ -108,6 +109,20 @@ const ProjectsSection = () => {
     const handleImageButtonClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, project: string, direction: string) => {
         e.preventDefault()
         switch (project) {
+            case 'SKC':
+                if (direction === 'PREV') {
+                    if (skcIndex === 0) return
+                    const translation = `${(skcIndex - 1) * -100}%`
+                    gsap.to(`.${className}_skcImage`, 0.5, {x: translation })
+                    setSkcIndex(prevState => prevState > 0 ? prevState - 1 : skcImages.length - 1)
+                }
+                if (direction === 'NEXT') {
+                    if (skcIndex === skcImages.length - 1) return
+                    const translation = `${(skcIndex + 1) * -100}%`
+                    gsap.to(`.${className}_skcImage`, 0.5, {x: translation })
+                    setSkcIndex(prevState => (prevState + 1) % skcImages.length)
+                }
+                break;
             case 'SPR':
                 if (direction === 'PREV') {
                     if (sprIndex === 0) return
@@ -165,13 +180,70 @@ const ProjectsSection = () => {
             <div className={`${className}_headerWide`}>
                 <HeaderScene text='project' camPosition={new Vector3(0, 0, 2)} scrollTo='.ProjectsSection' />
             </div>
-            <p className={`${className}_freeTier`}>* Projects use Render.com free tier server hosting. Please allow up to 30 seconds for first request to server.</p>
+            <p className={`${className}_freeTier`}>* Starred projects use Render.com free tier server hosting. Please allow up to 30 seconds for first request to server.</p>
 
             <div className={`${className}_projectContainer`}>
 
                 <div className={`${className}_leftContainer`}>
                     <p className={`${className}_projectName`}>
-                        singlepagerecipes.com
+                        speedknightchallenge.com
+                    </p>
+                    <div className={`${className}_projectImageContainer`}>
+                        <img className={`${className}_projectImage ${className}_skcImage`} src={skcImages[0].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_skcImage`} src={skcImages[1].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_skcImage`} src={skcImages[2].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_skcImage`} src={skcImages[3].image} alt="webpage" />
+                    </div>
+                    <div className={`${className}_imageButtonsContainer`} >
+                        <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'SKC', 'PREV')} >{'<'}</button>
+                        <p className={`${className}_imageText`}>{`${skcImages[skcIndex].desc} (${skcIndex + 1}/${skcImages.length})`}</p>
+                        <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'SKC', 'NEXT')} >{'>'}</button>
+                    </div>
+                    <div className={`${className}_imageOverlay`}></div>
+                </div>
+
+                <div className={`${className}_descriptionContainer`}>
+                    <div className={`${className}_textSection`}>
+                        <div className={`${className}_textContainer`}>
+                            <p className={`${className}_text`}>
+                                <span className={`${className}_sectionLabel`} >Purpose:</span> Online browser game that provides a competitive way to help players improve their knowledge of the knight piece in chess.
+                            </p>
+                        </div>
+                        <div className={`${className}_textContainer`}>
+                            <p className={`${className}_text`}>
+                                <span className={`${className}_sectionLabel`} >Key Features:</span>
+                            </p>
+                            <ul className={`${className}_list`}>
+                                <li className={`${className}_text`}>Serverless AWS Architecture using Amazon Cognito for user authentication, DynamoDB for storage, and API Gateway integrated with AWS Lambda for REST API</li>
+                                <li className={`${className}_text`}>Record your games stats to track your improvement and compare to global community scores</li>
+                                <li className={`${className}_text`}>Clean and simple design with light/dark mode toggle for improved UI experience </li>
+                            </ul>
+                        </div>
+                        <div className={`${className}_textContainer`}>
+                            <p className={`${className}_text`}>
+                                <span className={`${className}_sectionLabel`} >Main Tech:</span> React, Vite, Typescript, API Gateway, AWS Lambda, DynamoDB, AWS Amplify, AWS-SDK
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className={`${className}_buttonContainer`}>
+                        <a className={`${className}_button`} href="https://www.speedknightchallenge.com" target="_blank" rel='noreferrer' >
+                            Visit Website
+                        </a>
+                        <a className={`${className}_button`} href="https://github.com/JamesDeChavez/SpeedKnight" target="_blank" rel='noreferrer' >
+                            Github
+                        </a>  
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div className={`${className}_projectContainer`}>
+
+                <div className={`${className}_leftContainer`}>
+                    <p className={`${className}_projectName`}>
+                        singlepagerecipes.com*
                     </p>
                     <div className={`${className}_projectImageContainer`}>
                         <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[0].image} alt="webpage" />
@@ -229,7 +301,7 @@ const ProjectsSection = () => {
 
                 <div className={`${className}_leftContainer`}>
                     <p className={`${className}_projectName`}>
-                        bsdrank.com
+                        bsdrank.com*
                     </p>
                     <div className={`${className}_projectImageContainer`}>
                         <img className={`${className}_projectImage ${className}_bsdImage`} src={bsdImages[0].image} alt="webpage" />
