@@ -180,7 +180,7 @@ const ProjectsSection = () => {
             <div className={`${className}_headerWide`}>
                 <HeaderScene text='project' camPosition={new Vector3(0, 0, 2)} scrollTo='.ProjectsSection' />
             </div>
-            <p className={`${className}_freeTier`}>* Starred projects use Render.com free tier server hosting. Please allow up to 30 seconds for first request to server.</p>
+            <p className={`${className}_freeTier`}>*Asterisk marked projects use Render.com free tier server hosting. Please allow up to 30 seconds for first request to server.</p>
 
             <div className={`${className}_projectContainer`}>
 
