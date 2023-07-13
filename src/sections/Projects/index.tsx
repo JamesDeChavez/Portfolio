@@ -185,7 +185,10 @@ const ProjectsSection = () => {
             <div className={`${className}_projectContainer`}>
 
                 <div className={`${className}_leftContainer`}>
-                    <p className={`${className}_projectName`}>
+                    <p className={`${className}_projectName ${className}_skc`}>
+                        speedknightchallenge
+                    </p>
+                    <p className={`${className}_projectName ${className}_skcWide`}>
                         speedknightchallenge.com
                     </p>
                     <div className={`${className}_projectImageContainer`}>

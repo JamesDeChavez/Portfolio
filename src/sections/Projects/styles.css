@@ -53,6 +53,10 @@
     overflow-x: hidden;
 }
 
+.ProjectsSection_skcWide {
+    display: none;
+}
+
 .ProjectsSection_projectImageContainer {
     position: relative;
     display: flex;
@@ -209,6 +213,14 @@
         max-width: none;
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
+    }
+
+    .ProjectsSection_skcWide {
+        display: inherit;
+    }
+
+    .ProjectsSection_skc {
+        display: none;
     }
 
     .ProjectsSection_descriptionContainer {
