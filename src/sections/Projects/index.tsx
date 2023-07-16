@@ -219,7 +219,7 @@ const ProjectsSection = () => {
                             <ul className={`${className}_list`}>
                                 <li className={`${className}_text`}>Serverless AWS Architecture using Amazon Cognito for user authentication, DynamoDB for storage, and API Gateway integrated with AWS Lambda for REST API</li>
                                 <li className={`${className}_text`}>Record your games stats to track your improvement and compare to global community scores</li>
-                                <li className={`${className}_text`}>Clean and simple design with light/dark mode toggle for improved UI experience </li>
+                                <li className={`${className}_text`}>Breadth-first search algorithm calculates knight's shortest path to provide players with a post-game efficiency score</li>
                             </ul>
                         </div>
                         <div className={`${className}_textContainer`}>
