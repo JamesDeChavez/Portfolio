@@ -196,6 +196,7 @@ const ProjectsSection = () => {
                         <img className={`${className}_projectImage ${className}_skcImage`} src={skcImages[1].image} alt="webpage" />
                         <img className={`${className}_projectImage ${className}_skcImage`} src={skcImages[2].image} alt="webpage" />
                         <img className={`${className}_projectImage ${className}_skcImage`} src={skcImages[3].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_skcImage`} src={skcImages[4].image} alt="webpage" />
                     </div>
                     <div className={`${className}_imageButtonsContainer`} >
                         <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'SKC', 'PREV')} >{'<'}</button>
@@ -219,7 +220,7 @@ const ProjectsSection = () => {
                             <ul className={`${className}_list`}>
                                 <li className={`${className}_text`}>Serverless AWS Architecture using Amazon Cognito for user authentication, DynamoDB for storage, and API Gateway integrated with AWS Lambda for REST API</li>
                                 <li className={`${className}_text`}>Record your games stats to track your improvement and compare to global community scores</li>
-                                <li className={`${className}_text`}>Breadth-first search algorithm calculates knight's shortest path to provide players with a post-game efficiency score</li>
+                                <li className={`${className}_text`}>Breadth-first search algorithm calculates knight's shortest path to provide players with a post-game efficiency report</li>
                             </ul>
                         </div>
                         <div className={`${className}_textContainer`}>

@@ -2,6 +2,7 @@ import skcImage from '../../assets/speedknightchallenge_01.jpg'
 import skcImage2 from '../../assets/speedknightchallenge_02.jpg'
 import skcImage3 from '../../assets/speedknightchallenge_03.jpg'
 import skcImage4 from '../../assets/speedknightchallenge_04.jpg'
+import skcImage5 from '../../assets/speedknightchallenge_05.jpg'
 import sprImage from '../../assets/singlepagerecipes_webpage.jpg'
 import sprImage2 from '../../assets/singlepagerecipes_webpage2.jpg'
 import sprImage3 from '../../assets/singlepagerecipes_webpage3.jpg'
@@ -18,8 +19,9 @@ import tftImage3 from '../../assets/tftrolldown_webpage3.jpg'
 export const skcImages = [
     { image: skcImage, desc: 'game: capture as many pawns as you can in 60 seconds' }, 
     { image: skcImage2, desc: 'track your scores and compare to global statistics' },
-    { image: skcImage3, desc: 'create an account with email or using google account' },
-    { image: skcImage4, desc: 'light/dark mode toggle for improved ui experience' }
+    { image: skcImage3, desc: 'improve by reviewing post-game efficiency report' },
+    { image: skcImage4, desc: 'create an account with email or using google account' },
+    { image: skcImage5, desc: 'light/dark mode toggle for improved ui experience' }
 ]
 
 export const sprImages = [
