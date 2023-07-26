@@ -185,6 +185,64 @@ const ProjectsSection = () => {
             <div className={`${className}_projectContainer`}>
 
                 <div className={`${className}_leftContainer`}>
+                    <p className={`${className}_projectName`}>
+                        singlepagerecipes.com*
+                    </p>
+                    <div className={`${className}_projectImageContainer`}>
+                        <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[0].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[1].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[2].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[3].image} alt="webpage" />
+                        <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[4].image} alt="webpage" />
+                    </div>
+                    <div className={`${className}_imageButtonsContainer`} >
+                        <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'SPR', 'PREV')} >{'<'}</button>
+                        <p className={`${className}_imageText`}>{`${sprImages[sprIndex].desc} (${sprIndex + 1}/${sprImages.length})`}</p>
+                        <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'SPR', 'NEXT')} >{'>'}</button>
+                    </div>
+                    <div className={`${className}_imageOverlay`}></div>
+                </div>
+
+                <div className={`${className}_descriptionContainer`}>
+                    <div className={`${className}_textSection`}>
+                        <div className={`${className}_textContainer`}>
+                            <p className={`${className}_text`}>
+                                <span className={`${className}_sectionLabel`} >Purpose:</span> Simplify the process of learning new recipes from Youtube and ordering recipe ingredients from Amazon Fresh.
+                            </p>
+                        </div>
+                        <div className={`${className}_textContainer`}>
+                            <p className={`${className}_text`}>
+                                <span className={`${className}_sectionLabel`} >Key Features:</span>
+                            </p>
+                            <ul className={`${className}_list`}>
+                                <li className={`${className}_text`}>Youtube API connection to help users find new recipes</li>
+                                <li className={`${className}_text`}>Amazon Fresh API connection to automate ingredient ordering</li>
+                                <li className={`${className}_text`}>Single-page UI ensures all recipe info is readily available on all screen sizes</li>
+                            </ul>
+                        </div>
+                        <div className={`${className}_textContainer`}>
+                            <p className={`${className}_text`}>
+                                <span className={`${className}_sectionLabel`} >Main Tech:</span> React, Typescript, Apollo GraphQL, MongoDB, Node.js, Express
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className={`${className}_buttonContainer`}>
+                        <a className={`${className}_button`} href="https://www.singlepagerecipes.com" target="_blank" rel='noreferrer' >
+                            Visit Website
+                        </a>
+                        <a className={`${className}_button`} href="https://github.com/JamesDeChavez/SinglePageRecipes" target="_blank" rel='noreferrer' >
+                            Github
+                        </a>  
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div className={`${className}_projectContainer`}>
+
+                <div className={`${className}_leftContainer`}>
                     <p className={`${className}_projectName ${className}_skc`}>
                         speedknightchallenge
                     </p>
@@ -235,64 +293,6 @@ const ProjectsSection = () => {
                             Visit Website
                         </a>
                         <a className={`${className}_button`} href="https://github.com/JamesDeChavez/SpeedKnight" target="_blank" rel='noreferrer' >
-                            Github
-                        </a>  
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div className={`${className}_projectContainer`}>
-
-                <div className={`${className}_leftContainer`}>
-                    <p className={`${className}_projectName`}>
-                        singlepagerecipes.com*
-                    </p>
-                    <div className={`${className}_projectImageContainer`}>
-                        <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[0].image} alt="webpage" />
-                        <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[1].image} alt="webpage" />
-                        <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[2].image} alt="webpage" />
-                        <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[3].image} alt="webpage" />
-                        <img className={`${className}_projectImage ${className}_sprImage`} src={sprImages[4].image} alt="webpage" />
-                    </div>
-                    <div className={`${className}_imageButtonsContainer`} >
-                        <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'SPR', 'PREV')} >{'<'}</button>
-                        <p className={`${className}_imageText`}>{`${sprImages[sprIndex].desc} (${sprIndex + 1}/${sprImages.length})`}</p>
-                        <button className={`${className}_imageButton`} onClick={(e) => handleImageButtonClick(e, 'SPR', 'NEXT')} >{'>'}</button>
-                    </div>
-                    <div className={`${className}_imageOverlay`}></div>
-                </div>
-
-                <div className={`${className}_descriptionContainer`}>
-                    <div className={`${className}_textSection`}>
-                        <div className={`${className}_textContainer`}>
-                            <p className={`${className}_text`}>
-                                <span className={`${className}_sectionLabel`} >Purpose:</span> Simplify the process of learning new recipes from Youtube and ordering recipe ingredients from Amazon Fresh.
-                            </p>
-                        </div>
-                        <div className={`${className}_textContainer`}>
-                            <p className={`${className}_text`}>
-                                <span className={`${className}_sectionLabel`} >Key Features:</span>
-                            </p>
-                            <ul className={`${className}_list`}>
-                                <li className={`${className}_text`}>Youtube API connection to help users find new recipes</li>
-                                <li className={`${className}_text`}>Amazon Fresh API connection to automate ingredient ordering</li>
-                                <li className={`${className}_text`}>Single-page UI ensures all recipe info is readily available on all screen sizes</li>
-                            </ul>
-                        </div>
-                        <div className={`${className}_textContainer`}>
-                            <p className={`${className}_text`}>
-                                <span className={`${className}_sectionLabel`} >Main Tech:</span> React, Typescript, Apollo GraphQL, MongoDB, Node.js, Express
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className={`${className}_buttonContainer`}>
-                        <a className={`${className}_button`} href="https://www.singlepagerecipes.com" target="_blank" rel='noreferrer' >
-                            Visit Website
-                        </a>
-                        <a className={`${className}_button`} href="https://github.com/JamesDeChavez/SinglePageRecipes" target="_blank" rel='noreferrer' >
                             Github
                         </a>  
                     </div>
